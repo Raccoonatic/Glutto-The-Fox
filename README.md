@@ -139,3 +139,5 @@ Take a break. Drink water. Maybe eat an arepa.
 Don’t let Glutto eat them all.
 
 💥🧡✨
+
+![Gameplay](./assets/Thanks.png)
