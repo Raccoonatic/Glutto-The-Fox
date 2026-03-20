@@ -4,7 +4,7 @@
 
 # 🦝✨ So Long — Glutto the Fox ✨💜
 
-> We all have our deamons, but not all fights have a clear evil and good side
+> We all have our deamons, not all fights have a clear evil and good side
 
 ---
 
@@ -24,7 +24,7 @@ He sees those that try to help him as ghostly orange figures that he tries to av
 
 Will you indulge him on his sinful habit, to help him escape his prison and forgive himself? Or will the fear get the best of you, making this Glutto's final slumber?
 
-🫓	The arepas are not just food — they are compulsion.  
+🫓	The arepas are not just food — they are Glutto's Eden.  
 
 ---
 
@@ -32,7 +32,7 @@ Will you indulge him on his sinful habit, to help him escape his prison and forg
 
 Guide Glutto through his looping dreamscape:
 
-- 🟧 Collect **all arepas (C)**
+- 🫓 Collect **all arepas (C)**
 - 🚪 Unlock the **exit (E)** after everything is collected
 - 👻 Avoid **ghostly enemies (X)**
 - 💔 Survive long enough to escape
@@ -58,7 +58,7 @@ make BKGRND=./textures/background_image.xmp
 ```
 
 - **make evolution** : Will take you through a trip down memory lane. 
-> This run presentation that opens windows and test files secuentially, to show the journey I went through when learning and experimenting with the mlx library. 
+> This runs a presentation that opens windows and test files secuentially, to show the journey I went through while learning and experimenting with the mlx library. 
 
 ```bash
 make evolution
@@ -70,7 +70,7 @@ Running **make** will leave you with a **so_long** executable, that you can run 
 ./so_long ./maps/level001.ber
 ```
 >This map needs to fulfill a series of conditions specified in the project's subject. Included in the repository. But for a short description, it is a text file with the .ber suffix, that will be interpreted by the program. The characters are interpreted as follows:
-##### 🗺️ Map Format (.ber)
+#### 🗺️ Map Format (.ber)
 > - **1**	Wall 🧱
 > - **0**	Empty space
 > - **P**	Player (Glutto 🦊)
@@ -78,18 +78,18 @@ Running **make** will leave you with a **so_long** executable, that you can run 
 > - **E**	Exit 🚪
 > - **X**	Enemy 👻🟧
 
-##### 🎮 Controls
+#### 🎮 Controls
 > -  **WASD / Arrow Keys**	→ Move Glutto
-> - 	   **ESC**		→ Exit game
+> -        **ESC**		→ Exit game
 > - **Window Close Button**	→ Exit game
 
 ### 🛠️ Running the Presentation
 
-Running **make evolution** showcases a presentation that opens windows and test files secuentially, to show the journey I went through when learning and experimenting with the mlx library.
+Running **make evolution** showcases a presentation that opens windows and test files secuentially, to show the journey I went through while learning and experimenting with the mlx library.
 
 The presentation will start running from the makefile, opening the file I was working on at the time to test the functions. The file contains a comment that gives info on what aspect of the library I was working on, what tests I was doing, and even ways to interact with the tests. Yes, interact with the tests. 
 
-Because along with this file, an mlx window will open that shows the result of the test, and in some cases, you can use WASD or the arrow keys and even the mouse cursor to interact with things on the window. **More info on each file.**
+Because along with this file, an mlx window will open that shows the result of the test, and in some cases, you can use **WASD** or the **arrow keys** and even the **mouse cursor** to interact with things on the window. **More info on each file.**
 
 ```bash
 make evolution
@@ -112,10 +112,11 @@ As you finish looking at any of the tests, you can hit the **ESC** key to move o
 
 ## 📚 Resources
 
-- MiniLibX Guide:  👉 https://harm-smits.github.io/42docs/libs/minilibx
-- Coffee:	   👉 ☕
-- Trial and Error: 👉 Certified 42 methodology.
-> Break it. Fix it. Break it better. Repeat until enlightenment (or burnout). 💥
+- MiniLibX Guide:	👉 https://harm-smits.github.io/42docs/libs/minilibx
+- Coffee:		👉 ☕
+- Trial and Error:	👉 Certified 42 methodology.
+> 🦝 Break it. Fix it. Make it better. 🦝
+> ✨ Repeat until enlightenment (or burnout). 💥
 
 ## 🤖 AI Usage
 
@@ -130,11 +131,9 @@ AI was used as a **supporting tool**, mainly for:
 
 If you made it this far…
 
-Take a break.
 Merry Christmas.
-Drink water.
-Maybe eat an arepa.
+Take a break. Drink water.Maybe eat an arepa.
 
-Just don’t let Glutto eat them all.
+Don’t let Glutto eat them all.
 
 💥🧡✨
