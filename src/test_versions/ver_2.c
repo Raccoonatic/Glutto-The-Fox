@@ -44,14 +44,14 @@ int	main(void)
 	mlx = mlx_init();
 
 	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
+	mlx_win = mlx_new_window(mlx, 960, 540, "Hello world!");
 	
-	img.img = mlx_new_image(mlx, 1920, 1080);
+	img.img = mlx_new_image(mlx, 960, 540);
 	img.mlx = mlx;
 	img.mlx_win = mlx_win;
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
 
-	my_mlx_pixel_put(&img, 960, 540, 0xFF37FA85);
+	my_mlx_pixel_put(&img, (960/2), (540/2), 0xFF37FA85);
 	mlx_put_image_to_window(img.mlx, img.mlx_win, img.img, 0, 0);
 
 /* This section is solely for demonstration purposes: */ mlx_hook(img.mlx_win, 2, 1L<<0, handle_keypress, &img);	

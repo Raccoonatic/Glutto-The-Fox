@@ -44,28 +44,28 @@ int render(t_data *img)
 
 	my_mlx_pixel_put(img, x, y, 0xFF37FA85);
 	x++;
-	if (y < 1080)
+	if (y < (1080/2))
 		y++;
 	my_mlx_pixel_put(img, x, y, 0xFF37FA85);
-	if (y < 1080)
+	if (y < (1080/2))
 		y++;
 	my_mlx_pixel_put(img, x, y, 0xFF37FA85);
-	if (y < 1080)
+	if (y < (1080/2))
 		y++;
 	my_mlx_pixel_put(img, x, y, 0xFF37FA85);
-	if (y < 1080)
+	if (y < (1080/2))
 		y++;
 	my_mlx_pixel_put(img, x, y, 0xFF37FA85);
-	if (y < 1080)
+	if (y < (1080/2))
 		y++;
 	my_mlx_pixel_put(img, x, y, 0xFF37FA85);
-	if (x > 1920)
+	if (x > (1920/2))
 	{
 		x = 0;
-		if (y < 1080)
+		if (y < (1080/2))
 			y++;
 	}
-	if (y == 1080)
+	if (y == (1080/2))
 		y = 0;
 	mlx_put_image_to_window(img->mlx, img->mlx_win, img->img, 0, 0);
 	return (0);
@@ -80,8 +80,8 @@ int	main(void)
 	mlx = mlx_init();
 
 	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
-	img.img = mlx_new_image(mlx, 1920, 1080);
+	mlx_win = mlx_new_window(mlx, 960, 540, "Hello world!");
+	img.img = mlx_new_image(mlx, 960, 540);
 	img.mlx = mlx;
 	img.mlx_win = mlx_win;
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);

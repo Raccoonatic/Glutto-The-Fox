@@ -37,7 +37,7 @@ void clear(t_data *data)
 	char	*end;
 	
 	dst = data->addr;
-	end = data->addr + (1080 * data->bytes_per_row);
+	end = data->addr + (1080/2 * data->bytes_per_row);
 	
 	while (dst != end)
 		*(unsigned int*)dst++ = 0;
@@ -126,11 +126,11 @@ int render_spiral(t_data *img)
 	if (t_t > 2 * M_PI)
 		t_t -= 2 * M_PI;
 
-        while (y < 1080 && y >= 0 && x < 1920 && x >= 0)
+        while (y < 1080/2 && y >= 0 && x < 1920/2 && x >= 0)
         {
-        	x = (int)(sin(t + o) * radius + 960);
-        	y = (int)(cos(t + o) * radius + 540);
-        	if (y < 1080 && y >= 0 && x < 1920 && x >= 0)
+        	x = (int)(sin(t + o) * radius + 960/2);
+        	y = (int)(cos(t + o) * radius + 540/2);
+        	if (y < 1080/2 && y >= 0 && x < 1920/2 && x >= 0)
                         my_mlx_pixel_put(img, x, y, color);
 		t += img->t_increment;
 		radius += img->radius_increment;
@@ -145,8 +145,8 @@ int	main(void)
         t_data img;
 
 	img.mlx = mlx_init();
-	img.mlx_win = mlx_new_window(img.mlx, 1920, 1080, "Mapache's Spiral of Sorrows");
-	img.img = mlx_new_image(img.mlx, 1920, 1080);
+	img.mlx_win = mlx_new_window(img.mlx, 1920/2, 1080/2, "Mapache's Spiral of Sorrows");
+	img.img = mlx_new_image(img.mlx, 1920/2, 1080/2);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.bytes_per_row, &img.endian);
 	
 	img.o_increment = 0.0001;

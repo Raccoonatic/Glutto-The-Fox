@@ -24,7 +24,7 @@ int	main(void)
         t_data  safe_exit;
 
 	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
+	mlx_win = mlx_new_window(mlx, 960, 540, "Hello world!");
 	
 /* This section is solely for demonstration purposes: */ safe_exit.mlx = mlx; safe_exit.mlx_win = mlx_win; mlx_hook(safe_exit.mlx_win, 2, 1L<<0, handle_keypress, &safe_exit);
 	

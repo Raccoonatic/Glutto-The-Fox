@@ -134,7 +134,7 @@ AI was used as a **supporting tool**, mainly for:
 ```bash
 make dependencies
 ```
-> Minilibx might require some dependencies that you could not have installed. If that's the case, this rule should fix your compilation issues. **Requires sudo access**.
+> Minilibx requires some dependencies that you might not have installed. If that's the case, this rule should fix your compilation issues. **Requires sudo access**.
 
 ```bash
 make open
@@ -167,4 +167,4 @@ Don’t let Glutto eat them all.
 
 💥🧡✨
 
-![Gameplay](./assets/Thanks.png)
+![Gameplay](./textures/Thanks.png)

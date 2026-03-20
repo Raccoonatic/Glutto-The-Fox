@@ -41,26 +41,26 @@ int handle_keypress(int keycode, t_data *data)
 		exit (0);
 	}
 	if (keycode == 100 || keycode == 65363)
-		data->x += 20;
+		data->x += 20/2;
 	if (keycode == 97 || keycode == 65361)
-		data->x -= 20;
+		data->x -= 20/2;
 	if (keycode == 115 || keycode == 65364)
-		data->y += 20;
+		data->y += 20/2;
 	if (keycode == 119 || keycode == 65362)
-		data->y -= 20;
+		data->y -= 20/2;
 	racc_print(1, "%e %d, %d, %d %e\n", "racc", keycode, data->x, data->y, "racc");
 	return (0);
 }
 
 int handle_mouse(int x, int y, t_data *data)
 {
-	while(x-50 < data->x)
+	while(x-50/2 < data->x)
 		data->x--;
-	while(x-50 > data->x)
+	while(x-50/2 > data->x)
 		data->x++;
-	while(y-50 < data->y)
+	while(y-50/2 < data->y)
 		data->y--;
-	while(y-50 > data->y)
+	while(y-50/2 > data->y)
 		data->y++;
 	return (0);
 }
@@ -88,7 +88,7 @@ int render_bkgrnd(t_data *img)
 
 	color = (r << 16) | (g << 8) | b;
 
-	end = img->addr + (1080 * img->bytes_per_row);
+	end = img->addr + (1080/2 * img->bytes_per_row);
 	dst = img->addr;
 
 	while (dst < end)
@@ -96,9 +96,9 @@ int render_bkgrnd(t_data *img)
 		*(unsigned int*)dst = color;
 		dst += (img->bits_per_pixel / 8);
 	}
-	t += 0.005; // controls animation speed
+	t += 0.001; // controls animation speed
 	if (t > 2 * M_PI)
-		t -= 2 * M_PI; // reset loop (optional)
+		t -= 2 * M_PI; // reset loop 
 
 	return (0);
 }
@@ -130,7 +130,7 @@ int render_character(t_data *img)
 		dst += (img->bits_per_pixel / 8);
 	}
 
-	t_t += 0.005;
+	t_t += 0.001;
 	if (t_t > 2 * M_PI)
 		t_t -= 2 * M_PI;
         while (radius-- > 16)
@@ -169,9 +169,9 @@ int	main(void)
 
 	mlx = mlx_init();
 
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Mapache's box'o fun");
+	mlx_win = mlx_new_window(mlx, 1920/2, 1080/2, "Mapache's box'o fun");
 	layers.chara.img = mlx_new_image(mlx, 101, 101);
-	layers.bkgrnd.img = mlx_new_image(mlx, 1920, 1080);
+	layers.bkgrnd.img = mlx_new_image(mlx, 1920/2, 1080/2);
 	layers.chara.mlx = mlx;
 	layers.bkgrnd.mlx = mlx;
 	layers.chara.mlx_win = mlx_win;
@@ -180,8 +180,8 @@ int	main(void)
 	layers.chara.addr = mlx_get_data_addr(layers.chara.img, &layers.chara.bits_per_pixel, &layers.chara.bytes_per_row, &layers.chara.endian);
 	layers.bkgrnd.x = 0;
 	layers.bkgrnd.y = 0;
-	layers.chara.x = 910;
-	layers.chara.y = 500;
+	layers.chara.x = 910/2;
+	layers.chara.y = 500/2;
 	mlx_hook(layers.chara.mlx_win, 2, 1L<<0, handle_keypress, &layers.chara);
 	mlx_hook(layers.chara.mlx_win, 6, 1L<<6, handle_mouse, &layers.chara);
 	mlx_loop_hook(layers.bkgrnd.mlx, render, &layers);

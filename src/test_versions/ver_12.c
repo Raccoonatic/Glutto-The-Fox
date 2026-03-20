@@ -55,25 +55,25 @@ int	handle_keypress(int keycode, t_data *data)
 
 	if (keycode == 100 || keycode == 65363)
 	{
-		data->x += 20;
+		data->x += 20/2;
 		if (data->x >= data->img_width + 100)
 			data->x -= data->img_width;
 	}
 	if (keycode == 97 || keycode == 65361)
 	{
-		data->x -= 20;
+		data->x -= 20/2;
 		if (data->x < data->img_width - 100)
 			data->x += data->img_width;
 	}
 	if (keycode == 115 || keycode == 65364)
 	{
-		data->y += 20;
+		data->y += 20/2;
 		if (data->y >= data->img_height + 100)
 			data->y -= data->img_height;
 	}
 	if (keycode == 119 || keycode == 65362)
 	{
-		data->y -= 20;
+		data->y -= 20/2;
 		if (data->y < data->img_height - 100)
 			data->y += data->img_height;
 	}
@@ -179,13 +179,13 @@ int	main(void)
 	lyrs.game.img_height = lyrs.bkgrn.img_height;
 	lyrs.game.img = mlx_new_image(lyrs.game.mlx, lyrs.game.img_width, lyrs.game.img_height);
 
-	lyrs.game.mlx_win = mlx_new_window(lyrs.game.mlx, 1920, 1080, "Mapache's box'o fun");
+	lyrs.game.mlx_win = mlx_new_window(lyrs.game.mlx, 1920/2, 1080/2, "Mapache's box'o fun");
 	lyrs.bkgrn.mlx_win = lyrs.game.mlx_win;
 	lyrs.game.addr = mlx_get_data_addr(lyrs.game.img, &lyrs.game.bits_per_pixel, &lyrs.game.bytes_per_row, &lyrs.game.endian);
 	lyrs.bkgrn.addr = mlx_get_data_addr(lyrs.bkgrn.img, &lyrs.bkgrn.bits_per_pixel, &lyrs.bkgrn.bytes_per_row, &lyrs.bkgrn.endian);
 
-	lyrs.game.x = 1200;
-	lyrs.game.y = 600;
+	lyrs.game.x = 1200/2;
+	lyrs.game.y = 600/2;
 
 	mlx_hook(lyrs.game.mlx_win, 17, 1L<<0, handle_close, &lyrs.game);
 	mlx_hook(lyrs.game.mlx_win, 2, 1L<<0, handle_keypress, &lyrs.game);

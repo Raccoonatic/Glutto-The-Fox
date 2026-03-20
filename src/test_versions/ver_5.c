@@ -38,26 +38,26 @@ int handle_keypress(int keycode, t_data *data)
 		exit (0);
 	}
 	if (keycode == 100 || keycode == 65363)
-		data->x += 20;
+		data->x += 20/2;
 	if (keycode == 97 || keycode == 65361)
-		data->x -= 20;
+		data->x -= 20/2;
 	if (keycode == 115 || keycode == 65364)
-		data->y += 20;
+		data->y += 20/2;
 	if (keycode == 119 || keycode == 65362)
-		data->y -= 20;
+		data->y -= 20/2;
 	racc_print(1, "%e %d, %d, %d %e\n", "racc", keycode, data->x, data->y, "racc");
 	return (0);
 }
 
 int handle_mouse(int x, int y, t_data *data)
 {
-	while(x-50 < data->x)
+	while(x-50/2 < data->x)
 		data->x--;
-	while(x-50 > data->x)
+	while(x-50/2 > data->x)
 		data->x++;
-	while(y-50 < data->y)
+	while(y-50/2 < data->y)
 		data->y--;
-	while(y-50 > data->y)
+	while(y-50/2 > data->y)
 		data->y++;
 	return (0);
 }
@@ -109,12 +109,12 @@ int	main(void)
 	mlx = mlx_init();
 
 	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
+	mlx_win = mlx_new_window(mlx, 1920/2, 1080/2, "Hello world!");
 	img.img = mlx_new_image(mlx, 101, 101);
 	img.mlx = mlx;
 	img.mlx_win = mlx_win;
-	img.x = 910;
-	img.y = 500;
+	img.x = 910/2;
+	img.y = 500/2;
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
 	mlx_hook(img.mlx_win, 2, 1L<<0, handle_keypress, &img);
 	mlx_hook(img.mlx_win, 6, 1L<<6, handle_mouse, &img);

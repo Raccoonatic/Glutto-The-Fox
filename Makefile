@@ -6,7 +6,7 @@
 #    By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 15:46:25 by lde-san-          #+#    #+#              #
-#    Updated: 2026/03/20 19:58:43 by lde-san-         ###   ########.fr        #
+#    Updated: 2026/03/20 20:10:47 by lde-san-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ BLAK	= \033[38;2;0;0;0m
 B_WI    = \033[1;37m
 RSET	= \033[0m
 
-MAIN_F_BONUS = src/so_long_bonus.c
+MAIN_F ?= src/so_long_bonus.c
 BKGRND ?= ./textures/Herculy.xpm
 
 SRC_DIR = src/
@@ -61,7 +61,7 @@ all: $(NAME)
 
 $(NAME): $(LIBFT) ./inc/mlx_linux/libmlx.a ./inc/mlx_linux/libmlx_Linux.a $(OBJ_BONUS) ./inc/solong_bonus.h
 	@printf "$(BABY)"
-	$(COMPILE) $(MAIN_F_BONUS) $(OBJ_BONUS) $(LIBFT) -L./inc/mlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz -o $(NAME)
+	$(COMPILE) $(MAIN_F) $(OBJ_BONUS) $(LIBFT) -L./inc/mlx_linux -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz -o $(NAME)
 	@printf "$(MINT)"
 	@ls -la
 	@printf "$(RSET)"

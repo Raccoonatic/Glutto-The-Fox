@@ -44,31 +44,31 @@ int handle_keypress(int keycode, t_datapack *data)
 	}
 	if (keycode == 100 || keycode == 65363)
 	{
-		data->chara.x += 20;
-		data->bkgrnd.t_increment += 0.001;
+		data->chara.x += 20/2;
+		data->bkgrnd.t_increment += 0.0005;
 	}
 	if (keycode == 97 || keycode == 65361)
 	{
-		data->chara.x -= 20;
-		data->bkgrnd.t_increment -= 0.001;
+		data->chara.x -= 20/2;
+		data->bkgrnd.t_increment -= 0.0005;
 	}
 	if (keycode == 115 || keycode == 65364)
-		data->chara.y += 20;
+		data->chara.y += 20/2;
 	if (keycode == 119 || keycode == 65362)
-		data->chara.y -= 20;
+		data->chara.y -= 20/2;
 	printf("🦝 %d, %d, %d, %f 🦝\n", keycode, data->chara.x, data->chara.y, data->bkgrnd.t_increment);
 	return (0);
 }
 
 int handle_mouse(int x, int y, t_data *data)
 {
-	while(x-50 < data->x)
+	while(x-50/2 < data->x)
 		data->x--;
-	while(x-50 > data->x)
+	while(x-50/2 > data->x)
 		data->x++;
-	while(y-50 < data->y)
+	while(y-50/2 < data->y)
 		data->y--;
-	while(y-50 > data->y)
+	while(y-50/2 > data->y)
 		data->y++;
 	return (0);
 }
@@ -95,7 +95,7 @@ int render_bkgrnd(t_data *img)
 
 	color = (r << 16) | (g << 8) | b;
 
-	end = img->addr + (1080 * img->bytes_per_row);
+	end = img->addr + (1080/2 * img->bytes_per_row);
 	dst = img->addr;
 
 	while (dst < end)
@@ -117,12 +117,12 @@ int render_character(t_data *img)
 
 	my_mlx_pixel_put(img, x, y, 0xFF37FA85);
 	mlx_put_image_to_window(img->mlx, img->mlx_win, img->img, img->x, img->y);
-	if (x < 100 && y == 0)
+	if (x < 100/2 && y == 0)
 	{ 
 		x++;
 		return(0);
 	} 
-	else if (y < 100 && x == 100)
+	else if (y < 100/2 && x == 100/2)
 	{
 		y++;
 		return(0);
@@ -157,9 +157,9 @@ int	main(void)
 
 	mlx = mlx_init();
 
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Mapache's box'o fun");
-	layers.chara.img = mlx_new_image(mlx, 101, 101);
-	layers.bkgrnd.img = mlx_new_image(mlx, 1920, 1080);
+	mlx_win = mlx_new_window(mlx, 1920/2, 1080/2, "Mapache's box'o fun");
+	layers.chara.img = mlx_new_image(mlx, 103/2, 103/2);
+	layers.bkgrnd.img = mlx_new_image(mlx, 1920/2, 1080/2);
 	layers.chara.mlx = mlx;
 	layers.bkgrnd.mlx = mlx;
 	layers.chara.mlx_win = mlx_win;
@@ -168,9 +168,9 @@ int	main(void)
 	layers.chara.addr = mlx_get_data_addr(layers.chara.img, &layers.chara.bits_per_pixel, &layers.chara.bytes_per_row, &layers.chara.endian);
 	layers.bkgrnd.x = 0;
 	layers.bkgrnd.y = 0;
-	layers.chara.x = 910;
-	layers.chara.y = 500;
-	layers.bkgrnd.t_increment = 0.005;
+	layers.chara.x = 910/2;
+	layers.chara.y = 500/2;
+	layers.bkgrnd.t_increment = 0.001;
 	mlx_hook(layers.chara.mlx_win, 2, 1L<<0, handle_keypress, &layers);
 	mlx_hook(layers.chara.mlx_win, 6, 1L<<6, handle_mouse, &layers.chara);
 	mlx_loop_hook(layers.bkgrnd.mlx, render, &layers);

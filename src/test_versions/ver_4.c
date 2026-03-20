@@ -42,7 +42,7 @@ int render(t_data *img)
 	static int y = 0; 
 
 	my_mlx_pixel_put(img, x, y, 0xFF37FA85);
-	mlx_put_image_to_window(img->mlx, img->mlx_win, img->img, 910, 500);
+	mlx_put_image_to_window(img->mlx, img->mlx_win, img->img, 910/2, 500/2);
 	if (x < 100 && y == 0)
 	{ 
 		x++;
@@ -75,8 +75,8 @@ int	main(void)
 	mlx = mlx_init();
 
 	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
-	img.img = mlx_new_image(mlx, 1920, 1080);
+	mlx_win = mlx_new_window(mlx, 1920/2, 1080/2, "Hello world!");
+	img.img = mlx_new_image(mlx, 1920/2, 1080/2);
 	img.mlx = mlx;
 	img.mlx_win = mlx_win;
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
