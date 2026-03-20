@@ -4,7 +4,7 @@
 
 # 🦝✨ So Long — Glutto the Fox ✨💜
 
-> We all have our deamons, not all fights have a clear evil and good side
+> We all have our demons, not all fights have a clear evil and good side.
 
 ---
 
@@ -128,6 +128,33 @@ AI was used as a **supporting tool**, mainly for:
  - 🔍 Code reviewing / catching subtle mistakes
  - 💣 Preventing unnecessary compile attempts *(a.k.a. “yes, you forgot a semicolon again”)*
  - 🧮 Math *(Yeah, just math)*
+
+### 🚨 Other Makefile Utilities
+
+```bash
+make dependencies
+```
+> Minilibx might require some dependencies that you could not have installed. If that's the case, this rule should fix your compilation issues. **Requires sudo access**.
+
+```bash
+make open
+```
+> Opens all the source files that were created for this project.
+
+```bash
+make clean
+```
+> Removes the object files, created during compilation.
+
+```bash
+make fclean
+```
+> Runs **make clean** and rm the **so_long** executable.
+
+```bash
+make re
+```
+> Runs **make fclean** and re-compiles the **so_long** executable.
 
 ## 🧾 Final Notes 🦝💜
 
