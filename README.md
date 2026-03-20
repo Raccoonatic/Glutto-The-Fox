@@ -63,6 +63,7 @@ make BKGRND=./textures/background_image.xmp
 ```bash
 make evolution
 ```
+
 ### 🛠️ Running the Game
 
 Running **make** will leave you with a **so_long** executable, that you can run passing the path to a map as a parameter.
@@ -70,18 +71,19 @@ Running **make** will leave you with a **so_long** executable, that you can run 
 ./so_long ./maps/level001.ber
 ```
 >This map needs to fulfill a series of conditions specified in the project's subject. Included in the repository. But for a short description, it is a text file with the .ber suffix, that will be interpreted by the program. The characters are interpreted as follows:
+
 #### 🗺️ Map Format (.ber)
-> - **1**	Wall 🧱
-> - **0**	Empty space
-> - **P**	Player (Glutto 🦊)
-> - **C**	Collectible (Arepa 🫓)
-> - **E**	Exit 🚪
-> - **X**	Enemy 👻🟧
+> - **[1]**	Wall 🧱
+> - **[0]**	Empty space
+> - **[P]**	Player (Glutto 🦊)
+> - **[C]**	Collectible (Arepa 🫓)
+> - **[E]**	Exit 🚪
+> - **[X]**	Enemy 👻🟧
 
 #### 🎮 Controls
-> - 	**WASD / Arrow Keys**	→ Move Glutto
-> -	**ESC**		→ Exit game
-> -	**Window Close Button**	→ Exit game
+> -**WASD / Arrow Keys**	→ Move Glutto
+> -**ESC**		→ Exit game
+> -**Window Close Button**	→ Exit game
 
 ### 🛠️ Running the Presentation
 
