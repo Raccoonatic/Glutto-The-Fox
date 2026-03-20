@@ -22,7 +22,7 @@ Glutto is a fox with a *mad case of the blues*...
 As he dreams, his guilt makes him a prisoner of his gluttony. Once he gets the hunger, is almost as if he can't see an exit until he has eaten everything in the room.
 He sees those that try to help him as ghostly orange figures that he tries to avoid. If they get too close, Glutto's fragile heart might stop from the stress! 
 
-Will you indulge him on his sinful habit, to help him escape his prison and forgive himself? Or will the fear get the best of you, making this Glutto's final slumber?
+Will you indulge him on his sinful habit, to help him escape his prison and forgive himself? Or will fear get the best of you, making this Glutto's final slumber?
 
 🫓	The arepas are not just food — they are Glutto's Eden.  
 
