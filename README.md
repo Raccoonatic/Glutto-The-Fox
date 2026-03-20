@@ -117,8 +117,7 @@ As you finish looking at any of the tests, you can hit the **ESC** key to move o
 - MiniLibX Guide:	👉 https://harm-smits.github.io/42docs/libs/minilibx
 - Coffee:		👉 ☕
 - Trial and Error:	👉 Certified 42 methodology.
-> 🦝 Break it. Fix it. Make it better. 🦝
-
+> 🦝 Break it. Fix it. Make it better. 🦝   
 > ✨ Repeat until enlightenment (or burnout). 💥
 
 ## 🤖 AI Usage
