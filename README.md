@@ -89,7 +89,7 @@ Running **make** will leave you with a **so_long** executable, that you can run 
 
 Running **make evolution** showcases a presentation that opens windows and test files secuentially, to show the journey I went through while learning and experimenting with the mlx library.
 
-The presentation will start running from the makefile, opening the file I was working on at the time to test the functions. The file contains a comment that gives info on what aspect of the library I was working on, what tests I was doing, and even ways to interact with the tests. Yes, interact with the tests. 
+The presentation will start running from the makefile. Opening a file I was working with at the time to test the functions. The file contains a comment that gives info on what aspect of the library I was working on, what tests I was doing, and even ways to interact with the tests. Yes, interact with the tests. 
 
 Because along with this file, an mlx window will open that shows the result of the test, and in some cases, you can use **WASD** or the **arrow keys** and even the **mouse cursor** to interact with things on the window. **More info on each file.**
 
@@ -97,7 +97,7 @@ Because along with this file, an mlx window will open that shows the result of t
 make evolution
 ```
 
-As you finish looking at any of the tests, you can hit the **ESC** key to move on to the next stage of the testing evolution, or cancel with **CTRL+C** the Makefile at any time to exit the presentation altogether.
+As you finish looking at any of the tests, you can hit the **ESC** key to move on to the next stage of the evolution, or cancel the Makefile with **CTRL+C** at any time to exit the presentation altogether.
 
 ## 🧠 Technical Overview
 
@@ -116,7 +116,7 @@ As you finish looking at any of the tests, you can hit the **ESC** key to move o
 
 - MiniLibX Guide:	👉 https://harm-smits.github.io/42docs/libs/minilibx
 - Coffee:		👉 ☕
-- Trial and Error:	👉 Certified 42 methodology.
+- Certified 42 methodology:	👉 Trial and Error.
 > 🦝 Break it. Fix it. Make it better. 🦝   
 > ✨ Repeat until enlightenment (or burnout). 💥
 
@@ -149,7 +149,7 @@ make clean
 ```bash
 make fclean
 ```
-> Runs **make clean** and rm the **so_long** executable.
+> Runs **make clean** and removes the **so_long** executable.
 
 ```bash
 make re
