@@ -79,9 +79,9 @@ Running **make** will leave you with a **so_long** executable, that you can run 
 > - **X**	Enemy 👻🟧
 
 #### 🎮 Controls
-> -  **WASD / Arrow Keys**	→ Move Glutto
-> -        **ESC**		→ Exit game
-> - **Window Close Button**	→ Exit game
+> - 	**WASD / Arrow Keys**	→ Move Glutto
+> -	**ESC**		→ Exit game
+> -	**Window Close Button**	→ Exit game
 
 ### 🛠️ Running the Presentation
 
@@ -132,7 +132,7 @@ AI was used as a **supporting tool**, mainly for:
 If you made it this far…
 
 Merry Christmas.
-Take a break. Drink water.Maybe eat an arepa.
+Take a break. Drink water. Maybe eat an arepa.
 
 Don’t let Glutto eat them all.
 
