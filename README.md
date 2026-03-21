@@ -127,9 +127,11 @@ As you finish looking at any of the tests, you can hit the **ESC** key to move o
 - Pixel Art:    👉 itch.io
 
 *Most models were modified to fit the theme and vision for the project. And out of respect for the original creators. Bellow are the links to the original sprite sheets. Shout out to these artists for their amazing work. 🎨*
-	- https://free-game-assets.itch.io/free-sky-with-clouds-background-pixel-art-set
-	- https://elthen.itch.io/2d-pixel-art-fox-sprites?download
-	- https://o-lobster.itch.io/platformmetroidvania-pixel-art-asset-pack?download 
+
+
+- https://free-game-assets.itch.io/free-sky-with-clouds-background-pixel-art-set
+- https://elthen.itch.io/2d-pixel-art-fox-sprites?download
+- https://o-lobster.itch.io/platformmetroidvania-pixel-art-asset-pack?download 
 
 ---
 
