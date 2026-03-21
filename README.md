@@ -118,42 +118,23 @@ As you finish looking at any of the tests, you can hit the **ESC** key to move o
 ## 📚 Resources
 
 - MiniLibX Guide:
-  👉 https://harm-smits.github.io/42docs/libs/minilibx
+	- 👉 https://harm-smits.github.io/42docs/libs/minilibx
 
 - Coffee:
-  👉 ☕.
+	- 👉 ☕.
 
 - Certified 42 methodology:
-  👉 Trial and Error.
+	- 👉 Trial and Error.
 
 > 🦝 *Break it. Fix it. Make it better.*  
 > ✨ *Repeat until enlightenment (or burnout). 💥*
 
 - Pixel Art:
+	- 👉 https://free-game-assets.itch.io/free-sky-with-clouds-background-pixel-art-set
+	- 👉 https://elthen.itch.io/2d-pixel-art-fox-sprites?download
+	- 👉 https://o-lobster.itch.io/platformmetroidvania-pixel-art-asset-pack?download
 
-*Most models were modified to fit the theme and vision for the project. Out of respect for the original creators, below are the links to the original sprite sheets. Shout out to these artists for their amazing work. 🎨*
-
-  - 👉 https://free-game-assets.itch.io/free-sky-with-clouds-background-pixel-art-set
-  - 👉 https://elthen.itch.io/2d-pixel-art-fox-sprites?download
-  - 👉 https://o-lobster.itch.io/platformmetroidvania-pixel-art-asset-pack?download
-
-## 📚 Resources
-
-- MiniLibX Guide:	👉 https://harm-smits.github.io/42docs/libs/minilibx
-- Coffee:		👉 ☕
-- Certified 42 methodology:	👉 Trial and Error.
-
-> *🦝 Break it. Fix it. Make it better. 🦝*
-> *✨ Repeat until enlightenment (or burnout). 💥*
-
-- Pixel Art:    👉 itch.io
-
-*Most models were modified to fit the theme and vision for the project. And out of respect for the original creators. Below are the links to the original sprite sheets. Shout out to these artists for their amazing work. 🎨*
-
-
-	- https://free-game-assets.itch.io/free-sky-with-clouds-background-pixel-art-set
-	- https://elthen.itch.io/2d-pixel-art-fox-sprites?download
-	- https://o-lobster.itch.io/platformmetroidvania-pixel-art-asset-pack?download 
+> *🖌️ Most models were modified to fit the theme and vision for the project, And out of respect for the original creators. Below are the links to the original sprite sheets. Shout out to these artists for their amazing work. 🎨*
 
 ---
 
