@@ -16,7 +16,7 @@
 
 ---
 
-### 🦊 Glutto the Fox — The Lore
+## 🦊 Glutto the Fox — The Lore
 
 Glutto is a fox with a *mad case of the blues*...  
 As he dreams, his guilt makes him a prisoner of his gluttony. Once he gets the hunger, is almost as if he can't see an exit until he has eaten everything in the room.
@@ -24,18 +24,15 @@ He sees those that try to help him as ghostly orange figures that he tries to av
 
 Will you indulge him on his sinful habit, to help him escape his prison and forgive himself? Or will fear get the best of you, making this Glutto's final slumber?
 
-🫓	The arepas are not just food — they are Glutto's Eden.  
-
----
+🫓	The arepas are not just food — they are Glutto's personal Eden.  
 
 ### 🎯 Goal
 
 Guide Glutto through his looping dreamscape:
 
-- 🫓 Collect **all arepas (C)**
-- 🚪 Unlock the **exit (E)** after everything is collected
-- 👻 Avoid **ghostly enemies (X)**
-- 💔 Survive long enough to escape
+- 🫓 Collect **all arepas** to unlock the **exit** 🚪.
+- 👻 Avoid your **ghostly frenemies** 🟧.
+- 💔 Survive long enough to escape 🦊.
 
 Will you help him confront his guilt?..  
 
@@ -99,18 +96,24 @@ make evolution
 
 As you finish looking at any of the tests, you can hit the **ESC** key to move on to the next stage of the evolution, or cancel the Makefile with **CTRL+C** at any time to exit the presentation altogether.
 
+---
+
 ## 🧠 Technical Overview
 
-- Language: C
+- Language: **C**
 
-- Graphics: MiniLibX
+- Graphics: **MiniLibX**
 
-- Core concepts:
-	- Event handling (keyboard/mouse)
-	- Window management
-	- Texture rendering
-	- Game loop design
-	- Memory management (because leaks, am I right?)
+- Core features:
+	- Event handling.
+	- Window management.
+	- Real-time texture rendering with MiniLibX.
+	- Custom map parsing and validation.
+	- Player movement and collision system.
+	- Enemy interaction and movement logic.
+	- Resource management and memory safety. (Because leaks, am I right?).
+
+---
 
 ## 📚 Resources
 
@@ -119,6 +122,8 @@ As you finish looking at any of the tests, you can hit the **ESC** key to move o
 - Certified 42 methodology:	👉 Trial and Error.
 > 🦝 Break it. Fix it. Make it better. 🦝   
 > ✨ Repeat until enlightenment (or burnout). 💥
+
+---
 
 ## 🤖 AI Usage
 
@@ -129,7 +134,9 @@ AI was used as a **supporting tool**, mainly for:
  - 💣 Preventing unnecessary compile attempts *(a.k.a. “yes, you forgot a semicolon again”)*
  - 🧮 Math *(Yeah, just math)*
 
-### 🚨 Other Makefile Utilities
+---
+
+## 🚨 Other Makefile Utilities
 
 ```bash
 make dependencies
@@ -155,6 +162,8 @@ make fclean
 make re
 ```
 > Runs **make fclean** and re-compiles the **so_long** executable.
+
+---
 
 ## 🧾 Final Notes 🦝💜
 
