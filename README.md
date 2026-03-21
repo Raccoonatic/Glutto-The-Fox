@@ -67,7 +67,7 @@ Running **make** will leave you with a **so_long** executable, that you can run 
 ```bash
 ./so_long ./maps/level001.ber
 ```
->This map needs to fulfill a series of conditions specified in the project's subject. Included in the repository. But for a short description, it is a text file with the .ber suffix, that will be interpreted by the program. The characters are interpreted as follows:
+>This map needs to fulfill a series of conditions specified in the project's subject. Included in the repository *(./inc/subject\ documentation/)*. But for a short description, it is a text file with the .ber suffix, that will be interpreted by the program. The characters are interpreted as follows:
 
 #### 🗺️ Map Format (.ber)
 > - **[1]**	Wall 🧱
@@ -126,8 +126,8 @@ As you finish looking at any of the tests, you can hit the **ESC** key to move o
 
 - Pixel Art:    👉 itch.io
 > Most models were modified to fit the theme and vision for the project. And out of respect for the original creators. Bellow are the links to the original sprite sheets. Shout out to the creators for their amazing work. 🎨
-    - https://free-game-assets.itch.io/free-sky-with-clouds-background-pixel-art-set
-    	- https://elthen.itch.io/2d-pixel-art-fox-sprites?download
+	- https://free-game-assets.itch.io/free-sky-with-clouds-background-pixel-art-set
+	- https://elthen.itch.io/2d-pixel-art-fox-sprites?download
 	- https://o-lobster.itch.io/platformmetroidvania-pixel-art-asset-pack?download 
 
 ---
