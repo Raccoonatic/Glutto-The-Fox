@@ -134,7 +134,7 @@ As you finish looking at any of the tests, you can hit the **ESC** key to move o
 	- 👉 https://elthen.itch.io/2d-pixel-art-fox-sprites?download
 	- 👉 https://o-lobster.itch.io/platformmetroidvania-pixel-art-asset-pack?download
 
-> *🖌️ Most models were modified to fit the theme and vision for the project, And out of respect for the original creators. Below are the links to the original sprite sheets. Shout out to these artists for their amazing work. 🎨*
+> *🖌️ Most models were modified to fit the theme and vision for the project. And out of respect for the original creators. Above are the links to the original sprite sheets. Shout out to these artists for their amazing work, thank you for helping me bring Glutto to life. 🎨*
 
 ---
 
