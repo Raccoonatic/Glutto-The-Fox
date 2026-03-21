@@ -77,10 +77,10 @@ Running **make** will leave you with a **so_long** executable, that you can run 
 > - **[E]**	Exit 🚪
 > - **[X]**	Enemy 👻🟧
 
-#### 🎮 Controls
-> - **WASD / Arrow Keys**	→ Move Glutto
-> - **ESC**	→ Exit game
-> - **Window Close Button**	→ Exit game
+### 🎮 Controls
+- **WASD / Arrow Keys**	→ Move Glutto
+- **ESC**	→ Exit game
+- **Window Close Button**	→ Exit game
 
 ### 🛠️ Running the Presentation
 
