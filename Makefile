@@ -93,6 +93,7 @@ clean:
 	@sleep 0.3
 	@printf "$(BLOD)"
 	rm -rf $(OBJ_DIR)
+	@rm -rf ./src/test_versions
 	@sleep 0.3
 	@printf "$(RSET)"
 
@@ -143,7 +144,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@sleep 0.5
 	@printf "$(PURP)"
 	@./src/version_maker.sh
-	@rm -rf ./src/test_versions
+	@rm -rf ./src/version_maker.sh
 	@printf "\n\nMaking Version_1$(RSET)\n\n"
 	@sleep 1
 	@open src/test_versions/ver_1.c
@@ -153,7 +154,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	./$(NAME)
 	@sleep 0.5
 	@printf "$(PURP)"
-	@printf "\n\nMaking Version_1$(RSET)\n\n"
+	@printf "\n\nMaking Version_2$(RSET)\n\n"
 	@sleep 1
 	@open src/test_versions/ver_2.c
 	@rm -rf $(NAME)
@@ -162,7 +163,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	./$(NAME)
 	@sleep 0.5
 	@printf "$(PURP)"
-	@printf "\n\nMaking Version_1$(RSET)\n\n"
+	@printf "\n\nMaking Version_3$(RSET)\n\n"
 	@sleep 1
 	@open src/test_versions/ver_3.c
 	@rm -rf $(NAME)
@@ -171,7 +172,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	./$(NAME)
 	@sleep 0.5
 	@printf "$(PURP)"
-	@printf "\n\nMaking Version_1$(RSET)\n\n"
+	@printf "\n\nMaking Version_4$(RSET)\n\n"
 	@sleep 1
 	@open src/test_versions/ver_4.c
 	@rm -rf $(NAME)
@@ -180,7 +181,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	./$(NAME)
 	@sleep 0.5
 	@printf "$(PURP)"
-	@printf "\n\nMaking Version_1$(RSET)\n\n"
+	@printf "\n\nMaking Version_5$(RSET)\n\n"
 	@sleep 1
 	@open src/test_versions/ver_5.c
 	@rm -rf $(NAME)
@@ -189,7 +190,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	./$(NAME)
 	@sleep 0.5
 	@printf "$(PURP)"
-	@printf "\n\nMaking Version_1$(RSET)\n\n"
+	@printf "\n\nMaking Version_6$(RSET)\n\n"
 	@sleep 1
 	@open src/test_versions/ver_6.c
 	@rm -rf $(NAME)
@@ -198,7 +199,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	./$(NAME)
 	@sleep 0.5
 	@printf "$(PURP)"
-	@printf "\n\nMaking Version_1$(RSET)\n\n"
+	@printf "\n\nMaking Version_7$(RSET)\n\n"
 	@sleep 1
 	@open src/test_versions/ver_7.c
 	@rm -rf $(NAME)
@@ -207,7 +208,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	./$(NAME)
 	@sleep 0.5
 	@printf "$(PURP)"
-	@printf "\n\nMaking Version_1$(RSET)\n\n"
+	@printf "\n\nMaking Version_8$(RSET)\n\n"
 	@sleep 1
 	@open src/test_versions/ver_8.c
 	@rm -rf $(NAME)
@@ -216,7 +217,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	./$(NAME)
 	@sleep 0.5
 	@printf "$(PURP)"
-	@printf "\n\nMaking Version_1$(RSET)\n\n"
+	@printf "\n\nMaking Version_9$(RSET)\n\n"
 	@sleep 1
 	@open src/test_versions/ver_9.c
 	@rm -rf $(NAME)
@@ -225,7 +226,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	./$(NAME)
 	@sleep 0.5
 	@printf "$(PURP)"
-	@printf "\n\nMaking Version_1$(RSET)\n\n"
+	@printf "\n\nMaking Version_10$(RSET)\n\n"
 	@sleep 1
 	@open src/test_versions/ver_10.c
 	@rm -rf $(NAME)
@@ -234,7 +235,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	./$(NAME)
 	@sleep 0.5
 	@printf "$(PURP)"
-	@printf "\n\nMaking Version_1$(RSET)\n\n"
+	@printf "\n\nMaking Version_11$(RSET)\n\n"
 	@sleep 1
 	@open src/test_versions/ver_11.c
 	@rm -rf $(NAME)
@@ -243,14 +244,13 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	./$(NAME)
 	@sleep 0.5
 	@printf "$(PURP)"
-	@printf "\n\nMaking Version_1$(RSET)\n\n"
+	@printf "\n\nMaking Version_12$(RSET)\n\n"
 	@sleep 1
 	@open src/test_versions/ver_12.c
 	@rm -rf $(NAME)
 	@make WERROR="" MAIN_F=src/test_versions/ver_12.c
 	@printf "$(B_WI)$(NEOR)\n\n 🦝 Press ESC on the mlx window to continue... $(RSET)\n\n"
 	./$(NAME)
-	@sleep 0.5
 	@make fclean
 
 .PHONY: all clean fclean re open mlx_dependencies evolution src/version_maker.sh
@@ -282,8 +282,8 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@printf "%s\n" '# **************************************************************************** #' >> src/version_maker.sh
 	@printf "%s\n" '' >> src/version_maker.sh
 	@printf "%s\n" '#!bin/bash' >> src/version_maker.sh
-	@printf "%s\n" 'mkdir test_versions' >> src/version_maker.sh
-	@printf "%s\n" 'cat > test_versions/ver_1.c << '\''EOF'\''' >> src/version_maker.sh
+	@printf "%s\n" 'mkdir src/test_versions' >> src/version_maker.sh
+	@printf "%s\n" 'cat > src/test_versions/ver_1.c << '\''EOF'\''' >> src/version_maker.sh
 	@printf "%s\n" '/* ************************************************************************** */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                                            */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                        :::      ::::::::   */' >> src/version_maker.sh
@@ -317,7 +317,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@printf "%s\n" '	mlx_loop(mlx);' >> src/version_maker.sh
 	@printf "%s\n" '}' >> src/version_maker.sh
 	@printf "%s\n" 'EOF' >> src/version_maker.sh
-	@printf "%s\n" 'cat > test_versions/ver_2.c << '\''EOF'\''' >> src/version_maker.sh
+	@printf "%s\n" 'cat > src/test_versions/ver_2.c << '\''EOF'\''' >> src/version_maker.sh
 	@printf "%s\n" '/* ************************************************************************** */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                                            */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                        :::      ::::::::   */' >> src/version_maker.sh
@@ -379,7 +379,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@printf "%s\n" '	mlx_loop(mlx);' >> src/version_maker.sh
 	@printf "%s\n" '}' >> src/version_maker.sh
 	@printf "%s\n" 'EOF' >> src/version_maker.sh
-	@printf "%s\n" 'cat > test_versions/ver_3.c << '\''EOF'\''' >> src/version_maker.sh
+	@printf "%s\n" 'cat > src/test_versions/ver_3.c << '\''EOF'\''' >> src/version_maker.sh
 	@printf "%s\n" '/* ************************************************************************** */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                                            */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                        :::      ::::::::   */' >> src/version_maker.sh
@@ -474,7 +474,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@printf "%s\n" '	mlx_loop(mlx);' >> src/version_maker.sh
 	@printf "%s\n" '}' >> src/version_maker.sh
 	@printf "%s\n" 'EOF' >> src/version_maker.sh
-	@printf "%s\n" 'cat > test_versions/ver_4.c << '\''EOF'\''' >> src/version_maker.sh
+	@printf "%s\n" 'cat > src/test_versions/ver_4.c << '\''EOF'\''' >> src/version_maker.sh
 	@printf "%s\n" '/* ************************************************************************** */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                                            */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                        :::      ::::::::   */' >> src/version_maker.sh
@@ -564,7 +564,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@printf "%s\n" '	mlx_loop(mlx);' >> src/version_maker.sh
 	@printf "%s\n" '}' >> src/version_maker.sh
 	@printf "%s\n" 'EOF' >> src/version_maker.sh
-	@printf "%s\n" 'cat > test_versions/ver_5.c << '\''EOF'\''' >> src/version_maker.sh
+	@printf "%s\n" 'cat > src/test_versions/ver_5.c << '\''EOF'\''' >> src/version_maker.sh
 	@printf "%s\n" '/* ************************************************************************** */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                                            */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                        :::      ::::::::   */' >> src/version_maker.sh
@@ -689,7 +689,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@printf "%s\n" '	mlx_loop(mlx);' >> src/version_maker.sh
 	@printf "%s\n" '}' >> src/version_maker.sh
 	@printf "%s\n" 'EOF' >> src/version_maker.sh
-	@printf "%s\n" 'cat > test_versions/ver_6.c << '\''EOF'\''' >> src/version_maker.sh
+	@printf "%s\n" 'cat > src/test_versions/ver_6.c << '\''EOF'\''' >> src/version_maker.sh
 	@printf "%s\n" '/* ************************************************************************** */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                                            */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                        :::      ::::::::   */' >> src/version_maker.sh
@@ -856,7 +856,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@printf "%s\n" '}' >> src/version_maker.sh
 	@printf "%s\n" '' >> src/version_maker.sh
 	@printf "%s\n" 'EOF' >> src/version_maker.sh
-	@printf "%s\n" 'cat > test_versions/ver_7.c << '\''EOF'\''' >> src/version_maker.sh
+	@printf "%s\n" 'cat > src/test_versions/ver_7.c << '\''EOF'\''' >> src/version_maker.sh
 	@printf "%s\n" '/* ************************************************************************** */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                                            */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                        :::      ::::::::   */' >> src/version_maker.sh
@@ -1033,7 +1033,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@printf "%s\n" '}' >> src/version_maker.sh
 	@printf "%s\n" '' >> src/version_maker.sh
 	@printf "%s\n" 'EOF' >> src/version_maker.sh
-	@printf "%s\n" 'cat > test_versions/ver_8.c << '\''EOF'\''' >> src/version_maker.sh
+	@printf "%s\n" 'cat > src/test_versions/ver_8.c << '\''EOF'\''' >> src/version_maker.sh
 	@printf "%s\n" '/* ************************************************************************** */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                                            */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                        :::      ::::::::   */' >> src/version_maker.sh
@@ -1214,7 +1214,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@printf "%s\n" '}' >> src/version_maker.sh
 	@printf "%s\n" '' >> src/version_maker.sh
 	@printf "%s\n" 'EOF' >> src/version_maker.sh
-	@printf "%s\n" 'cat > test_versions/ver_9.c << '\''EOF'\''' >> src/version_maker.sh
+	@printf "%s\n" 'cat > src/test_versions/ver_9.c << '\''EOF'\''' >> src/version_maker.sh
 	@printf "%s\n" '/* ************************************************************************** */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                                            */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                        :::      ::::::::   */' >> src/version_maker.sh
@@ -1406,7 +1406,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@printf "%s\n" '}' >> src/version_maker.sh
 	@printf "%s\n" '' >> src/version_maker.sh
 	@printf "%s\n" 'EOF' >> src/version_maker.sh
-	@printf "%s\n" 'cat > test_versions/ver_10.c << '\''EOF'\''' >> src/version_maker.sh
+	@printf "%s\n" 'cat > src/test_versions/ver_10.c << '\''EOF'\''' >> src/version_maker.sh
 	@printf "%s\n" '/* ************************************************************************** */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                                            */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                        :::      ::::::::   */' >> src/version_maker.sh
@@ -1568,7 +1568,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@printf "%s\n" '	mlx_loop(img.mlx);' >> src/version_maker.sh
 	@printf "%s\n" '}' >> src/version_maker.sh
 	@printf "%s\n" 'EOF' >> src/version_maker.sh
-	@printf "%s\n" 'cat > test_versions/ver_11.c << '\''EOF'\''' >> src/version_maker.sh
+	@printf "%s\n" 'cat > src/test_versions/ver_11.c << '\''EOF'\''' >> src/version_maker.sh
 	@printf "%s\n" '/* ************************************************************************** */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                                            */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                        :::      ::::::::   */' >> src/version_maker.sh
@@ -1761,7 +1761,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@printf "%s\n" '	return(0);' >> src/version_maker.sh
 	@printf "%s\n" '}' >> src/version_maker.sh
 	@printf "%s\n" 'EOF' >> src/version_maker.sh
-	@printf "%s\n" 'cat > test_versions/ver_12.c << '\''EOF'\''' >> src/version_maker.sh
+	@printf "%s\n" 'cat > src/test_versions/ver_12.c << '\''EOF'\''' >> src/version_maker.sh
 	@printf "%s\n" '/* ************************************************************************** */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                                            */' >> src/version_maker.sh
 	@printf "%s\n" '/*                                                        :::      ::::::::   */' >> src/version_maker.sh
@@ -1962,5 +1962,5 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@printf "%s\n" '}' >> src/version_maker.sh
 	@printf "%s\n" 'EOF' >> src/version_maker.sh
 	@chmod +x src/version_maker.sh
-	@printf "\033[0m\t🦝\n"
+	@printf "\033[0m\n"
 
