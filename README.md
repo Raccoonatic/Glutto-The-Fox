@@ -10,7 +10,7 @@
 
 ## 🎮 Description
 
-**So Long** is a 2D game developed in **C** using the **MiniLibX (mlx)** graphics library, created as part of the 42 curriculum. At its core, the project focuses on map parsing, rendering, event handling, and building a simple game loop.
+**So Long** is a 2D game developed in **C** using the **MiniLibX (mlx)** graphics library. Created as part of the 42 curriculum. At its core, the project focuses on map parsing, pixel rendering, event handling, and building a simple game loop. However, for the sake of experimentation and creativity, **Glutto The Fox** heavily diverts from the base project's scope, pushing the limits of the engine to introduce complex new features and mechanics.
 
 *But let’s not pretend this is just about moving a sprite around.*
 
@@ -102,16 +102,18 @@ As you finish looking at any of the tests, you can hit the **ESC** key to move o
 
 - Language: **C**
 
-- Graphics: **MiniLibX**
+- Graphics API: **MiniLibX (mlx)**
 
-- Core features:
-	- Event handling.
-	- Window management.
-	- Real-time texture rendering with MiniLibX.
-	- Custom map parsing and validation.
-	- Player movement and collision system.
-	- Enemy interaction and movement logic.
-	- Resource management and memory safety. (Because leaks, am I right?).
+	- **Dynamic 2D Camera:** Viewport offset system for rendering massive, scrolling levels.
+	- **Direct Buffer Rendering:** Bypasses standard grid-drawing by pushing pixels directly to the image data buffer.
+	- **Visual Lerping:** Separates logical grid coordinates from visual coordinates for fluid, sub-tile sprite gliding.
+	- **Real-Time Sprite Flipping:** Inverts texture byte-reading mathematically to face moving directions without duplicated assets.
+	- **Procedural Autotiling:** Evaluates neighboring matrix characters to dynamically assign corner and border textures.
+	- **Padded AABB Collision:** Custom hitboxes with pixel tolerances for snug and fair interactions.
+	- **Pseudo-Random AI:** Independent enemy movement logic and pathing.
+	- **Event Handling:** Fluid window management and asynchronous keypress listening.
+	- **Map Parsing & Validation:** Strict error-checking and flood-fill pathfinding.
+	- **Resource Management:** Bulletproof allocation and cleanup *(because leaks, am I right?)*.
 
 ---
 
