@@ -6,7 +6,7 @@
 #    By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 15:46:25 by lde-san-          #+#    #+#              #
-#    Updated: 2026/04/06 23:10:07 by lde-san-         ###   ########.fr        #
+#    Updated: 2026/04/09 00:15:11 by lde-san-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,6 +94,7 @@ clean:
 	@printf "$(BLOD)"
 	rm -rf $(OBJ_DIR)
 	@rm -rf ./src/test_versions
+	@rm -rf ./src/version_maker.sh
 	@sleep 0.3
 	@printf "$(RSET)"
 

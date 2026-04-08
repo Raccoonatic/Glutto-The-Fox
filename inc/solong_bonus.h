@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:21:23 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/08 01:11:09 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/08 16:37:15 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@
 # define PSZ	168
 # define CSZ	48
 # define DSZ	108
+# define NSZ	49
 
 // Textures Path:
 # ifndef BKND
