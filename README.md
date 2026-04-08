@@ -51,7 +51,7 @@ There are 2 elements to this project that you can run with the provided makefile
 make
 ```
 ```bash
-make BKGRND=./textures/background_image.xmp
+make BKGRND=./textures/background_image.xpm
 ```
 
 - **make evolution** : Will take you through a trip down memory lane. 
