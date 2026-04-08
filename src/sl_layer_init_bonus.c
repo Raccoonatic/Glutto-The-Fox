@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 15:43:26 by lde-san-          #+#    #+#             */
-/*   Updated: 2025/11/25 13:51:21 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/08 01:22:16 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static void	sl_get_grnd(t_game *g, int *bpx, int *bpr, int *e);
 static void	sl_get_bkgrnd(t_game *g, int *bpx, int *bpr, int *e);
 static void	sl_get_items(t_game *g, t_imgdata *ci, t_imgdata *d);
 static void	sl_get_plyr(t_game *g, t_imgdata *i, t_imgdata *j);
+static void	sl_get_cam(t_game *g, t_cam *cam);
 
 void	sl_layer_init(t_game *g, int *bpx, int *bpr, int *e)
 {
@@ -35,7 +36,17 @@ void	sl_layer_init(t_game *g, int *bpx, int *bpr, int *e)
 	sl_get_bkgrnd(g, &g -> bgr.bpx, &g -> bgr.bpr, &g -> bgr.e);
 	sl_get_plyr(g, &g -> pi, &g -> pj);
 	sl_get_items(g, &g -> ci, &g -> d);
+	sl_get_cam(g, &g->cam);
 	sl_get_grnd(g, &g -> gr.bpx, &g -> gr.bpr, &g -> gr.e);
+	return ;
+}
+
+static void sl_get_cam(t_game *g, t_cam *cam)
+{
+	cam->pov = mlx_new_image(g->mlx, g_camw, g_camh);
+	if (!cam->pov)
+		sl_kill_the_game(g, 0, 4, 1);
+	cam->addr = mlx_get_data_addr(cam->pov, &cam->bpx, &cam->bpr, &cam->e);
 	return ;
 }
 
@@ -91,7 +102,7 @@ static void	sl_get_grnd(t_game *g, int *bpx, int *bpr, int *e)
 	sl_build_terrain(g, g -> map, &g -> gr);
 	sl_blackpink(&g -> gr, g -> h);
 	sl_coordinate(&floor, 2, g, 0);
-	sl_push_tile_to_frame(g -> buf.addr, g -> gr.addr, floor);
+	sl_push_tile_to_frame(g -> buf.addr, g -> gr.addr, floor, 'R');
 	return ;
 }
 

@@ -6,7 +6,7 @@
 #    By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 15:46:25 by lde-san-          #+#    #+#              #
-#    Updated: 2026/03/20 20:10:47 by lde-san-         ###   ########.fr        #
+#    Updated: 2026/04/06 23:10:07 by lde-san-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -253,7 +253,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	./$(NAME)
 	@make fclean
 
-.PHONY: all clean fclean re open mlx_dependencies evolution src/version_maker.sh
+.PHONY: all clean fclean re open mlx_dependencies evolution ./src/version_maker.sh
 
 ./src/version_maker.sh:
 	@printf "🦝 \001\033[3m\033[38;2;255;153;51m\002Building src/version_maker.sh... 🦝\\n"

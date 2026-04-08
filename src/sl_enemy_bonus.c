@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 20:10:17 by lde-san-          #+#    #+#             */
-/*   Updated: 2025/11/25 15:17:29 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/08 01:08:44 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,17 @@ void	sl_render_enmy(t_game *g, t_emy **e)
 	sl_coordinate(&c, 6, g, 0);
 	while (e[guide])
 	{
-		c.x = e[guide]-> x * TSZ;
-		c.y = e[guide]-> y * TSZ;
+		e[guide]->render_x += ((e[guide]->x * TSZ) - e[guide]->render_x) * 0.2;
+		e[guide]->render_y += ((e[guide]->y * TSZ) - e[guide]->render_y) * 0.2;
+		c.x = (int)e[guide]->render_x;
+		c.y = (int)e[guide]->render_y;
 		i = ++(e[guide]-> en.crnt_frm);
 		if (i > 5)
 		{
 			e[guide]-> en.crnt_frm = 0;
 			i = 0;
 		}
-		sl_push_tile_to_frame(g -> buf.addr, e[guide]-> en.frad[i], c);
+		sl_push_tile_to_frame(g -> buf.addr, e[guide]-> en.frad[i], c, e[guide]->facing);
 		guide++;
 	}
 	return ;
@@ -83,7 +85,9 @@ static t_emy	**sl_emy_pos(t_emy **gang, char **m)
 			if (m[y][x] == 'X')
 			{
 				gang[guide]-> x = x;
-				gang[guide++]-> y = y;
+				gang[guide]-> y = y;
+				gang[guide]->render_x = x * TSZ;
+				gang[guide++]->render_y = y * TSZ;
 				if (!gang[guide])
 					return (gang);
 			}
@@ -104,5 +108,8 @@ static void	sl_enemy_init(t_game *g, t_emy *en, t_imgdata *i)
 	sl_ani_init(g, i, TSZ);
 	en -> march = sl_now() % 7;
 	en -> dir = sl_now() % 4;
+	en -> facing = 'R';
+	if (en -> dir == LT)
+		en -> facing = 'L';
 	return ;
 }

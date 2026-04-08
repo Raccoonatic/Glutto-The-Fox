@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 20:54:30 by lde-san-          #+#    #+#             */
-/*   Updated: 2025/11/25 13:51:43 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/08 01:21:08 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	sl_build_terrain(t_game *g, char **map, t_imgdata *t)
 			c.y = y * TSZ;
 			index = sl_get_texture_index(map, y, x);
 			if (map[y][x] == '1')
-				sl_push_tile_to_frame(t -> addr, t -> frad[index], c);
+				sl_push_tile_to_frame(t -> addr, t -> frad[index], c, 'R');
 			x++;
 		}
 		y++;

@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:21:23 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/03/20 19:23:40 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/08 01:11:09 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@
 # define RSET	"\033[0m" 
 # define B_WI	"\033[1;37m"
 # define LIME	"\033[38;2;0;255;0m"
-# define BABY	"\033[38;2;0;255;247m"
+# define BABY	"\033[1;38;2;0;255;247m"
 # define BLOD	"\033[1;38;2;255;0;0m"
 # define PURP	"\033[1;38;2;174;5;252m"
 # define MINT	"\033[1;38;2;55;250;133m"
-# define NEOR	"\033[3m\033[38;2;255;153;51m"
+# define NEOR	"\033[3m\033[1;38;2;255;153;51m"
 
 // Tile size definition:
 # define TSZ	96
@@ -52,6 +52,9 @@
 # define COIN	"./textures/coin.xpm"
 # define DOOR	"./textures/door.xpm"
 # define ENMY	"./textures/enemy_fly.xpm"
+
+extern int	g_camw;
+extern int	g_camh;
 
 // Data type definitions
 typedef enum e_keys
@@ -89,6 +92,9 @@ typedef struct s_plyr
 	int		x;
 	int		grounded;
 	int		on_e;
+	char	facing;
+	double	render_x;
+	double	render_y;
 	t_state	state;
 }	t_plyr;
 
@@ -101,6 +107,17 @@ typedef struct s_cord
 	int	x;
 	int	y;
 }	t_cord;
+
+typedef struct s_cam
+{
+	void	*pov;
+	char    *addr;
+	int     bpx;
+	int     bpr;
+	int     e;
+	int     x;
+	int     y;
+} 	t_cam;
 
 typedef struct s_imgdata
 {
@@ -127,6 +144,9 @@ typedef struct s_emy
 	int			march;
 	int			y;
 	int			x;
+	char		facing;
+	double		render_x;
+	double      render_y;
 }	t_emy;
 
 typedef struct s_game
@@ -142,6 +162,7 @@ typedef struct s_game
 	int			exit_y;
 	int			exit_x;
 	int			moves;
+	t_cam		cam;
 	t_imgdata	buf;
 	t_imgdata	bgr;
 	t_imgdata	pi;
@@ -176,7 +197,7 @@ char		**sl_check_map(char **map_file, t_game *game);
 void		sl_clear_buffer(t_imgdata *img, int h);
 void		sl_main_render(t_game *game, t_imgdata *pst);
 void		sl_push_bkgrnd_to_frame(t_imgdata *d, t_imgdata *s);
-void		sl_push_tile_to_frame(char *dst, char *src, t_cord c);
+void		sl_push_tile_to_frame(char *dst, char *src, t_cord c, char facing);
 // -- -- #	sl_terrain_bonus.c			# -- -- //
 void		sl_build_terrain(t_game *g, char **map, t_imgdata *t);
 void		sl_blackpink(t_imgdata *img, int h);
@@ -200,7 +221,7 @@ void		ls_get_c_frm_idx(t_imgdata *c);
 // -- -- #  sl_player_bonus.c				# -- -- //
 void		sl_move_plyr(t_game *g, char **m, char ax, int mv);
 void		sl_grounded_check(char **map, t_plyr *p, int y, int x);
-void		sl_is_player_dead(t_game *g, t_emy **en, int py, int px);
+void		sl_is_player_dead(t_game *g, t_emy **en, double py, double px);
 t_imgdata	*ls_get_pst(t_game *g, int grnd, t_state *state);
 // -- -- #  sl_time_bonus.c				# -- -- //
 long long	sl_now(void);

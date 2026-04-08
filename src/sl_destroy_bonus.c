@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:51:10 by lde-san-          #+#    #+#             */
-/*   Updated: 2025/11/25 15:09:33 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/06 23:45:06 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void		sl_free_matrix(char **matrix);
 static void	sl_imgdata_wipe(t_game *g, t_imgdata *i);
 static void	sl_free_img_matrix(t_game *g, void **matrix);
 static void	sl_frenemy(t_game *g, t_emy **enmy);
+static void	sl_freecam(t_game *g, t_cam *cam);
 
 void	sl_frink(t_game *g)
 {
@@ -37,6 +38,15 @@ void	sl_frink(t_game *g)
 		sl_imgdata_wipe(g, &g -> gr);
 	if (g -> thnks.main || g -> thnks.frm || g -> thnks.frad)
 		sl_imgdata_wipe(g, &g -> thnks);
+	sl_freecam(g, &g -> cam);
+	return ;
+}
+
+static void sl_freecam(t_game *g, t_cam *cam)
+{
+	if (cam -> pov)
+		mlx_destroy_image(g -> mlx, cam -> pov);
+	cam -> pov = NULL;
 	return ;
 }
 

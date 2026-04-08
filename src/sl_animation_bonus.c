@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 14:20:55 by lde-san-          #+#    #+#             */
-/*   Updated: 2025/11/25 15:08:22 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/08 01:16:36 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ int	sl_animate(t_game *g)
 	sl_count_tiles(g -> map, g, 'C');
 	if (g -> coins == 0)
 		g -> victory = 1;
-	if (g -> enmy)
-		sl_is_player_dead(g, g -> enmy, g -> plyr.y, g -> plyr.x);
 	if ((sl_now() - g -> time_stamp) > 120)
 	{
 		if (g -> enmy && ((sl_now() - g -> ene_mv) > 800))
@@ -76,6 +74,10 @@ static void	sl_move_enemy(t_game *g, char **m, t_emy **gang)
 		}
 		gang[guide]-> x = nxtx;
 		gang[guide]-> y = nxty;
+		if (gang[guide]->dir == RT)
+			gang[guide]->facing = 'R';
+		if (gang[guide]->dir == LT)
+			gang[guide]->facing = 'L';
 		guide++;
 	}
 	return ;

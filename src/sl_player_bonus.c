@@ -6,14 +6,14 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 20:58:45 by lde-san-          #+#    #+#             */
-/*   Updated: 2025/11/25 16:04:05 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/08 00:38:47 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/solong_bonus.h"
 
 void				sl_grounded_check(char **map, t_plyr *p, int y, int x);
-void				sl_is_player_dead(t_game *g, t_emy **en, int py, int px);
+void				sl_is_player_dead(t_game *g, t_emy **en, double py, double px);
 static t_imgdata	*ls_get_pidx(t_game *g, t_state state);
 t_imgdata			*ls_get_pst(t_game *g, int grnd, t_state *state);
 
@@ -88,15 +88,26 @@ void	sl_grounded_check(char **map, t_plyr *p, int y, int x)
 	return ;
 }
 
-void	sl_is_player_dead(t_game *g, t_emy **en, int py, int px)
+void	sl_is_player_dead(t_game *g, t_emy **en, double py, double px)
 {
-	int	guide;
+	int			guide;
+	double		ex;
+	double		ey;
+	double		tol;
 
 	guide = 0;
+	tol = 30;
 	while (en[guide])
 	{
-		if (en[guide]-> x == px && en[guide]-> y == py)
+		ex = en[guide]->render_x;
+		ey = en[guide]->render_y;
+		if ((px + tol) < (ex + (TSZ - tol)) && (ex + tol) < (px + (PSZ - tol))
+			&& (py + (tol - 15)) < (ey + (TSZ - (tol - 15)))
+				&& (ey + (tol - 15)) < (py + (TSZ - (tol - 15))))
+		{
+			usleep(150000);
 			sl_kill_the_game(g, 1, 69, 0);
+		}
 		guide++;
 	}
 	return ;

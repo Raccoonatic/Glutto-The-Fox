@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 21:41:33 by lde-san-          #+#    #+#             */
-/*   Updated: 2025/11/25 13:50:53 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/07 17:34:20 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ static void	sl_coordinate_beta(t_cord *vessel, int c_unit, t_game *g, int ctrl)
 		vessel -> fw = g -> w;
 		vessel -> th = TSZ;
 		vessel -> tw = PSZ;
-		vessel -> x = (g -> plyr.x * TSZ) - 40;
-		vessel -> y = g -> plyr.y * TSZ;
+		vessel -> x = (int)g -> plyr.render_x;//(g -> plyr.x * TSZ) - 40;
+		vessel -> y = (int)g -> plyr.render_y;//g -> plyr.y * TSZ;
 	}
 	else if (c_unit == 4)
 	{

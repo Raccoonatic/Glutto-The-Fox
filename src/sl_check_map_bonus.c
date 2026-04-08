@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 19:50:51 by lde-san-          #+#    #+#             */
-/*   Updated: 2025/11/25 13:50:44 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/07 15:04:30 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,5 +130,12 @@ static int	sl_shape_check(char **map, t_game *game)
 	}
 	game -> h = rows * TSZ;
 	game -> w = first_column * TSZ;
+	if (rows > 24 || first_column > 43)
+	{
+		sl_free_matrix(map);
+		if (rows > 24)
+			sl_fail(1, 2, "Game didn't load. "NEOR"Map too big"RSET":"BLOD" ROWMAX="MINT"24"RSET);
+		sl_fail(1, 2, "Game didn't load. "NEOR"Map too big"RSET":"BLOD" COLMAX="MINT"43"RSET);
+	}
 	return (1);
 }

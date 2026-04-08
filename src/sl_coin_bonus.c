@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 18:33:52 by lde-san-          #+#    #+#             */
-/*   Updated: 2025/11/25 15:08:46 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/08 01:19:40 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	sl_render_coins(t_game *g, t_imgdata *coin, int index)
 			{
 				sl_coordinate(&c, 5, g, x * TSZ);
 				c.y = y * TSZ;
-				sl_push_tile_to_frame(g -> buf.addr, coin -> frad[index], c);
+				sl_push_tile_to_frame(g -> buf.addr, coin -> frad[index], c, 'R');
 			}
 			x++;
 		}
