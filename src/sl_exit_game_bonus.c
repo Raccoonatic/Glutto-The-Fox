@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 19:17:21 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/07 15:01:04 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/09 09:41:25 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,11 @@ void	sl_kill_the_game(t_game *game, int good, int err_cd, int exit_cd)
 	if (good == 0)
 	{
 		if (err_cd == 3)
-			sl_fail(1, exit_cd, "Game didn't load. "NEOR"Theme Path Invalid"RSET);
+			sl_fail(1, exit_cd, "Game didn't load. "NEOR"Theme mlx init Failed"RSET);
 		if (err_cd == 4)
 			sl_fail(1, exit_cd, "Game didn't load. "NEOR"mlx failed"RSET);
+		if (err_cd == 8)
+			sl_fail(1, exit_cd, "Game didn't load. "NEOR"HUD mlx init failed"RSET);
 	}
 	sl_fail(1, exit_cd, "Memory allocation error"RSET);
 	return ;

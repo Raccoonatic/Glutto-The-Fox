@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 20:10:17 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/08 01:08:44 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/09 17:25:57 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ static void	sl_enemy_init(t_game *g, t_emy *en, t_imgdata *i)
 	i -> main = mlx_xpm_file_to_image(g -> mlx, ENMY, &i -> w, &i -> h);
 	if (!i -> main)
 		sl_kill_the_game(g, 0, 4, 1);
-	sl_ani_init(g, i, TSZ);
+	sl_ani_init(g, i, TSZ, TSZ);
 	en -> march = sl_now() % 7;
 	en -> dir = sl_now() % 4;
 	en -> facing = 'R';

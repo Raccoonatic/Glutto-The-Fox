@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:21:23 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/08 16:37:15 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/09 21:24:41 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,14 @@
 # define PSZ	168
 # define CSZ	48
 # define DSZ	108
-# define NSZ	49
+# define FSZ	49
 
 // Textures Path:
 # ifndef BKND
 #  define BKND	"./textures/Herculy.xpm"
 # endif
+# define HUDF	"./textures/HUD/hud.xpm"
+# define FONT	"./textures/HUD/fonts.xpm"
 # define THXS	"./textures/Thanks.xpm"
 # define GRND	"./textures/floor.xpm"
 # define PLYI	"./textures/fox_idle.xpm"
@@ -172,13 +174,15 @@ typedef struct s_game
 	t_imgdata	d;
 	t_imgdata	gr;
 	t_imgdata	thnks;
+	t_imgdata	hud;
+	t_imgdata	font;
 	t_plyr		plyr;
 	t_emy		**enmy;
 	long long	time_stamp;
 	long long	ene_mv;
 }	t_game;
 
-//		Function Prototypes:
+//			Function Prototypes:
 // -- -- #	sl_flood_fill_bonus.c			# -- -- //
 char		**sl_path_check(char **map, t_game *game);
 // -- -- #	sl_map_init_utils_bonus.c		# -- -- //
@@ -207,7 +211,7 @@ void		sl_zeroing(t_game *game);
 void		sl_null_ptrs(t_imgdata *i);
 void		sl_zero_ints(t_imgdata *i, int e);
 // -- -- #	sl_sprite_handling_bonus.c	# -- -- //
-void		sl_strip_split(t_game *g, t_imgdata *i, int f_num, int f_w);
+void		sl_strip_split(t_game *g, t_imgdata *i, int f_num, int f_w, int f_h);
 void		sl_ani_strip_alloc(t_game *g, int f_num, void ***img, char ***addr);
 // -- -- #	sl_coordinate_bonus.c			# -- -- //
 void		sl_coordinate(t_cord *vessel, int c_unit, t_game *g, int ctrl);
@@ -228,11 +232,12 @@ t_imgdata	*ls_get_pst(t_game *g, int grnd, t_state *state);
 long long	sl_now(void);
 // -- -- #  sl_animation_bonus.c			# -- -- //
 int			sl_animate(t_game *g);
-void		sl_ani_init(t_game *g, t_imgdata *i, int f_w);
+void		sl_ani_init(t_game *g, t_imgdata *i, int f_w, int f_h);
 // -- -- #  sl_enemy_bonus.c				# -- -- //
 t_emy		**sl_get_enemys(t_game *g, char **m);
 void		sl_render_enmy(t_game *g, t_emy **e);
 // -- -- #  sl_win_bonus.c				# -- -- //
 void		sl_win(t_game *g);
-
+// -- -- #	sl_hud_bonus.c              # -- -- //
+void		sl_apply_hud(t_game *game);
 #endif

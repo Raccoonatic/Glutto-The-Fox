@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 15:43:26 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/08 01:22:16 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/09 17:27:49 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static void	sl_get_bkgrnd(t_game *g, int *bpx, int *bpr, int *e);
 static void	sl_get_items(t_game *g, t_imgdata *ci, t_imgdata *d);
 static void	sl_get_plyr(t_game *g, t_imgdata *i, t_imgdata *j);
 static void	sl_get_cam(t_game *g, t_cam *cam);
+static void sl_get_hud(t_game *g, t_imgdata *hud, t_imgdata *font);
 
 void	sl_layer_init(t_game *g, int *bpx, int *bpr, int *e)
 {
@@ -38,10 +39,22 @@ void	sl_layer_init(t_game *g, int *bpx, int *bpr, int *e)
 	sl_get_items(g, &g -> ci, &g -> d);
 	sl_get_cam(g, &g->cam);
 	sl_get_grnd(g, &g -> gr.bpx, &g -> gr.bpr, &g -> gr.e);
+	sl_get_hud(g, &g->hud, &g->font);
 	return ;
 }
 
-static void sl_get_cam(t_game *g, t_cam *cam)
+static void	sl_get_hud(t_game *g, t_imgdata *hud, t_imgdata *font)
+{
+	hud->main = mlx_xpm_file_to_image(g->mlx, HUDF, &(hud->w), &(hud->h));
+	font->main = mlx_xpm_file_to_image(g->mlx, FONT, &(font->w), &(font->h));
+	if (!hud->main || !font->main)
+		sl_kill_the_game(g, 0, 8, 1);
+	hud->addr = mlx_get_data_addr(hud->main, &(hud->bpx), &(hud->bpr), &(hud->e));
+	sl_ani_init(g, font, FSZ, FSZ);
+	return;
+}
+
+static void	sl_get_cam(t_game *g, t_cam *cam)
 {
 	cam->pov = mlx_new_image(g->mlx, g_camw, g_camh);
 	if (!cam->pov)
@@ -61,7 +74,7 @@ static void	sl_get_items(t_game *g, t_imgdata *ci, t_imgdata *d)
 	d -> main = mlx_xpm_file_to_image(g -> mlx, td, &d -> w, &d -> h);
 	if (!ci -> main || !d -> main)
 		sl_kill_the_game(g, 0, 4, 1);
-	sl_ani_init(g, ci, CSZ);
+	sl_ani_init(g, ci, CSZ, TSZ);
 	d -> addr = mlx_get_data_addr(d -> main, &d -> bpx, &d -> bpr, &d -> e);
 	sl_get_door_pos(g -> map, &g -> exit_y, &g -> exit_x);
 	return ;
@@ -78,8 +91,8 @@ static void	sl_get_plyr(t_game *g, t_imgdata *i, t_imgdata *j)
 	j -> main = mlx_xpm_file_to_image(g -> mlx, tj, &j -> w, &j -> h);
 	if (!i -> main || !j -> main)
 		sl_kill_the_game(g, 0, 4, 1);
-	sl_ani_init(g, i, PSZ);
-	sl_ani_init(g, j, PSZ);
+	sl_ani_init(g, i, PSZ, TSZ);
+	sl_ani_init(g, j, PSZ, TSZ);
 	return ;
 }
 
@@ -98,7 +111,7 @@ static void	sl_get_grnd(t_game *g, int *bpx, int *bpr, int *e)
 	frm_num = (g -> gr.w / TSZ);
 	g -> gr.addr = mlx_get_data_addr(g -> gr.main, bpx, bpr, e);
 	sl_ani_strip_alloc(g, frm_num, &g -> gr.frm, &g -> gr.frad);
-	sl_strip_split(g, &g -> gr, frm_num, TSZ);
+	sl_strip_split(g, &g -> gr, frm_num, TSZ, TSZ);
 	sl_build_terrain(g, g -> map, &g -> gr);
 	sl_blackpink(&g -> gr, g -> h);
 	sl_coordinate(&floor, 2, g, 0);

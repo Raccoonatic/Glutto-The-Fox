@@ -6,13 +6,13 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 14:20:55 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/08 01:16:36 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/09 17:17:55 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/solong_bonus.h"
 
-void		sl_ani_init(t_game *g, t_imgdata *i, int f_w);
+void		sl_ani_init(t_game *g, t_imgdata *i, int f_w, int f_h);
 static void	sl_move_enemy(t_game *g, char **m, t_emy **gang);
 static void	sl_march(t_emy *en, int *nxtx, int *nxty, int guide);
 static void	sl_change_enemy_direction(char **m, t_emy *e, int *nxtx, int *nxty);
@@ -112,14 +112,14 @@ static void	sl_change_enemy_direction(char **m, t_emy *e, int *nxtx, int *nxty)
 	return ;
 }
 
-void	sl_ani_init(t_game *g, t_imgdata *i, int f_w)
+void	sl_ani_init(t_game *g, t_imgdata *i, int f_w, int f_h)
 {
 	int	frm_num;
 
 	i -> addr = mlx_get_data_addr(i -> main, &i -> bpx, &i -> bpr, &i -> e);
 	frm_num = i -> w / f_w;
 	sl_ani_strip_alloc(g, frm_num, &i -> frm, &i -> frad);
-	sl_strip_split(g, i, frm_num, f_w);
+	sl_strip_split(g, i, frm_num, f_w, f_h);
 	i -> mx_index = frm_num;
 	return ;
 }

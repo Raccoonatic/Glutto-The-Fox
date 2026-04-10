@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:51:10 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/06 23:45:06 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/09 10:25:30 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ void	sl_frink(t_game *g)
 		sl_imgdata_wipe(g, &g -> gr);
 	if (g -> thnks.main || g -> thnks.frm || g -> thnks.frad)
 		sl_imgdata_wipe(g, &g -> thnks);
+	if (g -> hud.main || g -> hud.frm || g -> hud.frad)
+		sl_imgdata_wipe(g, &g -> hud);
+	if (g -> font.main || g -> font.frm || g -> font.frad)
+		sl_imgdata_wipe(g, &g -> font); 
 	sl_freecam(g, &g -> cam);
 	return ;
 }

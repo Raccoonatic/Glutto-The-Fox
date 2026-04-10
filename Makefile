@@ -6,7 +6,7 @@
 #    By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 15:46:25 by lde-san-          #+#    #+#              #
-#    Updated: 2026/04/09 00:15:11 by lde-san-         ###   ########.fr        #
+#    Updated: 2026/04/10 02:47:03 by lde-san-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRC_DIR = src/
 OBJ_DIR = obj/
 
 BONUS = sl_win_bonus.c
+BONUS += sl_hud_bonus.c
 BONUS += sl_coin_bonus.c
 BONUS += sl_door_bonus.c
 BONUS += sl_time_bonus.c
@@ -104,6 +105,7 @@ fclean: clean
 	@sleep 0.3
 	@printf "$(PURP)"
 	rm -f $(NAME)
+	rm -f path_of_gluttony.sh
 	@printf "$(MINT)"
 	@sleep 0.3
 	@ls -la
@@ -1964,4 +1966,105 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@printf "%s\n" 'EOF' >> src/version_maker.sh
 	@chmod +x src/version_maker.sh
 	@printf "\033[0m\n"
+
+path_of_gluttony:
+	@printf "🦝 \001\033[3m\033[38;2;255;153;51m\002Building path_of_gluttony.sh... 🦝\\n"
+	@> path_of_gluttony.sh
+	@printf "%s\n" '#!/bin/bash' >> path_of_gluttony.sh
+	@printf "%b%s%b\n" '\001\033[1;38;2;0;255;247m\002' '# **************************************************************************** #' '\001\033[0m\002'
+	@printf "%s\n" '# **************************************************************************** #' >> path_of_gluttony.sh
+	@printf "%b%s%b\n" '\001\033[1;38;2;0;255;247m\002' '#                                                                              #' '\001\033[0m\002'
+	@printf "%s\n" '#                                                                              #' >> path_of_gluttony.sh
+	@printf "%b%s%b\n" '\001\033[1;38;2;0;255;247m\002' '#                                                         :::      ::::::::    #' '\001\033[0m\002'
+	@printf "%s\n" '#                                                         :::      ::::::::    #' >> path_of_gluttony.sh
+	@printf "%b%s%b%s%b%s%b\n" '\001\033[1;38;2;0;255;247m\002' '#    ' '\001\033[1;38;2;55;250;133m\002' 'path_of_gluttony.sh                           ' '\001\033[1;38;2;0;255;247m\002' '     :+:      :+:    :+:    #' '\001\033[0m\002'
+	@printf "%s\n" '#    path_of_gluttony.sh                                :+:      :+:    :+:    #' >> path_of_gluttony.sh
+	@printf "%b%s%b\n" '\001\033[1;38;2;0;255;247m\002' '#                                                     +:+ +:+         +:+      #' '\001\033[0m\002'
+	@printf "%s\n" '#                                                     +:+ +:+         +:+      #' >> path_of_gluttony.sh
+	@printf "%b%s%b%s%b%s%b\n" '\001\033[1;38;2;0;255;247m\002' '#    ' '\001\033[1;38;2;55;250;133m\002' 'By: lde-san- <lde-san-@student.42porto.co     ' '\001\033[1;38;2;0;255;247m\002' ' +#+  +:+       +#+         #' '\001\033[0m\002'
+	@printf "%s\n" '#    By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+         #' >> path_of_gluttony.sh
+	@printf "%b%s%b\n" '\001\033[1;38;2;0;255;247m\002' '#                                                 +#+#+#+#+#+   +#+            #' '\001\033[0m\002'
+	@printf "%s\n" '#                                                 +#+#+#+#+#+   +#+            #' >> path_of_gluttony.sh
+	@printf "%b%s%b%s%b%s%b\n" '\001\033[1;38;2;0;255;247m\002' '#    ' '\001\033[1;38;2;0;255;0m\002' 'Created: 2026/04/07 12:44:59 by lde-san-      ' '\001\033[1;38;2;0;255;247m\002' '    #+#    #+#              #' '\001\033[0m\002'
+	@printf "%s\n" '#    Created: 2026/04/07 12:44:59 by lde-san-          #+#    #+#              #' >> path_of_gluttony.sh
+	@printf "%b%s%b%s%b%s%b\n" '\001\033[1;38;2;0;255;247m\002' '#    ' '\001\033[1;38;2;0;255;0m\002' 'Updated: 2026/04/07 12:44:59 by lde-san-      ' '\001\033[1;38;2;0;255;247m\002' '   ###   ########.fr        #' '\001\033[0m\002'
+	@printf "%s\n" '#    Updated: 2026/04/07 12:44:59 by lde-san-         ###   ########.fr        #' >> path_of_gluttony.sh
+	@printf "%b%s%b\n" '\001\033[1;38;2;0;255;247m\002' '#                                                                              #' '\001\033[0m\002'
+	@printf "%s\n" '#                                                                              #' >> path_of_gluttony.sh
+	@printf "%b%s%b\n" '\001\033[1;38;2;0;255;247m\002' '# **************************************************************************** #' '\001\033[0m\002'
+	@printf "%s\n" '# **************************************************************************** #' >> path_of_gluttony.sh
+	@printf "%s\n" '' >> path_of_gluttony.sh
+	@printf "%s\n" 'NEOR='\''\001\033[3m\033[38;2;255;153;51m\002'\''' >> path_of_gluttony.sh
+	@printf "%s\n" 'MINT='\''\001\033[1;38;2;55;250;133m\002'\''' >> path_of_gluttony.sh
+	@printf "%s\n" 'ORNG='\''\001\033[1;38;2;255;153;51m\002'\''' >> path_of_gluttony.sh
+	@printf "%s\n" 'PURP='\''\001\033[1;38;2;174;5;252m\002'\''' >> path_of_gluttony.sh
+	@printf "%s\n" 'PINK='\''\001\033[1;38;2;255;0;251m\002'\''' >> path_of_gluttony.sh
+	@printf "%s\n" 'BABY='\''\001\033[1;38;2;0;255;247m\002'\''' >> path_of_gluttony.sh
+	@printf "%s\n" 'BLOD='\''\001\033[1;38;2;255;0;0m\002'\''' >> path_of_gluttony.sh
+	@printf "%s\n" 'LIME='\''\001\033[1;38;2;0;255;0m\002'\''' >> path_of_gluttony.sh
+	@printf "%s\n" 'RSET='\''\001\033[0m\002'\''' >> path_of_gluttony.sh
+	@printf "%s\n" '' >> path_of_gluttony.sh
+	@printf "%s\n" 'EXEC="./so_long"' >> path_of_gluttony.sh
+	@printf "%s\n" 'MAP_DIR="maps"' >> path_of_gluttony.sh
+	@printf "%s\n" 'START_LEVEL=$${1:-0}' >> path_of_gluttony.sh
+	@printf "%s\n" '' >> path_of_gluttony.sh
+	@printf "%s\n" 'if [ ! -x "$$EXEC" ]; then' >> path_of_gluttony.sh
+	@printf "%s\n" '    echo -e "\n❌ $${BLOD}Error: $${ORNG}Could not find the executable $${MINT}'\''$$EXEC'\'' $${ORNG}or it is missing execution rights!\n"' >> path_of_gluttony.sh
+	@printf "%s\n" '    echo -e "              🦝$${PURP}..*$${LIME}#$${PINK}>$${BABY}--$${LIME}>$${BABY}>$${PINK} Did you forget to run $${ORNG}'\''$${MINT}make$${ORNG}'\''$${PINK}? $${BABY}<$${LIME}<$${BABY}--$${PINK}<$${LIME}#$${PURP}*..$${RSET}🦝\n"' >> path_of_gluttony.sh
+	@printf "%s\n" '    exit 1' >> path_of_gluttony.sh
+	@printf "%s\n" 'fi' >> path_of_gluttony.sh
+	@printf "%s\n" '' >> path_of_gluttony.sh
+	@printf "%s\n" 'export GLUTTORES=$$(xrandr | awk '\''/\*/ {print $$1}'\'')' >> path_of_gluttony.sh
+	@printf "%s\n" '' >> path_of_gluttony.sh
+	@printf "%s\n" 'MAP_SIZES=(' >> path_of_gluttony.sh
+	@printf "%s\n" '	"$$GLUTTORES"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"$$GLUTTORES"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"$$GLUTTORES"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"480x480"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"$$GLUTTORES"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"$$GLUTTORES"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"$$GLUTTORES"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"600x600"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"2000x800"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"1500x1500"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"$$GLUTTORES"' >> path_of_gluttony.sh
+	@printf "%s\n" ')' >> path_of_gluttony.sh
+	@printf "%s\n" '' >> path_of_gluttony.sh
+	@printf "%s\n" 'echo -e "\n\t\t🦊 $${LIME}Starting the $${NEOR}Path of Gluttony $${LIME}Gauntlet... $${RSET}🦝\n"' >> path_of_gluttony.sh
+	@printf "%s\n" 'sleep 1' >> path_of_gluttony.sh
+	@printf "%s\n" '' >> path_of_gluttony.sh
+	@printf "%s\n" 'for (( i=$$START_LEVEL; i<=10; i++ )); do' >> path_of_gluttony.sh
+	@printf "%s\n" '    MAP_FILE="$${MAP_DIR}/lvl_$${i}.ber"' >> path_of_gluttony.sh
+	@printf "%s\n" '    if [ ! -f "$$MAP_FILE" ]; then' >> path_of_gluttony.sh
+	@printf "%s\n" '        echo -e "❌ $${BLOD}Error: $${ORNG}Could not find $${MINT}$$MAP_FILE$${ORNG}! Did you delete the by any chance?$${RSET}\n"' >> path_of_gluttony.sh
+	@printf "%s\n" '        exit 1' >> path_of_gluttony.sh
+	@printf "%s\n" '    fi' >> path_of_gluttony.sh
+	@printf "%s\n" '' >> path_of_gluttony.sh
+	@printf "%s\n" '        echo -e "\t              $${PURP}..*$${LIME}#$${PINK}>$${BABY}--$${LIME}>$${BABY}>$${MINT}===========$${BABY}<$${LIME}<$${BABY}--$${PINK}<$${LIME}#$${PURP}*..$${RSET}"' >> path_of_gluttony.sh
+	@printf "%s\n" '		echo -e "\n\t\t     🦝🗺️     $${BABY}LOADING LEVEL$${MINT} $$i    🗺️ 🦝\n"' >> path_of_gluttony.sh
+	@printf "%s\n" '        echo -e "\t              $${PURP}..*$${LIME}#$${PINK}>$${BABY}--$${LIME}>$${BABY}>$${MINT}===========$${BABY}<$${LIME}<$${BABY}--$${PINK}<$${LIME}#$${PURP}*..$${RSET}\n"' >> path_of_gluttony.sh
+	@printf "%s\n" '		sleep 1' >> path_of_gluttony.sh
+	@printf "%s\n" '#################################### Calling the map over here boy!' >> path_of_gluttony.sh
+	@printf "%s\n" '	CURRENT_SIZE="$${MAP_SIZES[$$i]}"' >> path_of_gluttony.sh
+	@printf "%s\n" '	$$EXEC "$$MAP_FILE" $$CURRENT_SIZE' >> path_of_gluttony.sh
+	@printf "%s\n" '    EXIT_CODE=$$?' >> path_of_gluttony.sh
+	@printf "%s\n" '####################################    ' >> path_of_gluttony.sh
+	@printf "%s\n" '	if [ $$EXIT_CODE -eq 42 ]; then' >> path_of_gluttony.sh
+	@printf "%s\n" '        echo -e "\t $${PURP}..*$${LIME}#$${PINK}>$${BABY}--$${LIME}>$${BABY}>✅ $${MINT}SUCCESS! $${LIME}Moving to the next level... $${RSET}🦝$${BABY}<$${LIME}<$${BABY}--$${PINK}<$${LIME}#$${PURP}*..$${RSET}\n"' >> path_of_gluttony.sh
+	@printf "%s\n" '        sleep 0.5' >> path_of_gluttony.sh
+	@printf "%s\n" '' >> path_of_gluttony.sh
+	@printf "%s\n" '    elif [ $$EXIT_CODE -eq 69 ]; then' >> path_of_gluttony.sh
+	@printf "%s\n" '        echo -e "\n\t\t🦝💀 $${BLOD}You failed! $${PURP}Game Over on level$${PINK} $$i$${PURP}. 💀🦝\n"' >> path_of_gluttony.sh
+	@printf "%s\n" '        exit 0' >> path_of_gluttony.sh
+	@printf "%s\n" '' >> path_of_gluttony.sh
+	@printf "%s\n" '    else' >> path_of_gluttony.sh
+	@printf "%s\n" '        echo -e "❌$${BLOD} Game terminated unexpectedly $${PURP}(Exit Code: $$EXIT_CODE). $${NEOR}Aborting gauntlet.$${RSET}🦝"' >> path_of_gluttony.sh
+	@printf "%s\n" '        exit 1' >> path_of_gluttony.sh
+	@printf "%s\n" '    fi' >> path_of_gluttony.sh
+	@printf "%s\n" 'done' >> path_of_gluttony.sh
+	@printf "%s\n" '' >> path_of_gluttony.sh
+	@printf "%s\n" 'echo -e "\t\t🦝🏆 $${MINT}CONGRATULATIONS! $${LIME}You cleared all the maps! 🏆🦝$${RSET}"' >> path_of_gluttony.sh
+	@printf "%s\n" 'echo -e "\t              $${PURP}..*$${LIME}#$${PINK}>$${BABY}--$${LIME}>$${BABY}>$${BABY}Glutto $${LIME}now lives free of guilt! $${RSET}$${BABY}<$${LIME}<$${BABY}--$${PINK}<$${LIME}#$${PURP}*..$${RSET}"' >> path_of_gluttony.sh
+	@chmod +x path_of_gluttony.sh
+	@printf "\033[0m\t🦝\n"
 

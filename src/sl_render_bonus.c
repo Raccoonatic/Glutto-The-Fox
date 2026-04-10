@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 17:29:23 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/08 01:10:20 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/09 21:00:18 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void		sl_clear_buffer(t_imgdata *img, int h);
 void		sl_push_bkgrnd_to_frame(t_imgdata *d, t_imgdata *s);
 void		sl_push_tile_to_frame(char *dst, char *src, t_cord c, char facing);
 static void	sl_apply_camera_lens(t_game *g);
-static void	sl_render_moves(t_game *g, char *prefix, int moves);
+static int	sl_check_for_winner(t_game *g, t_cord *door, t_cord *floor);
+static void	sl_get_render_coords(t_game *g, t_cord *floor, t_cord *plyr, t_cord *door);
 
 void	sl_main_render(t_game *g, t_imgdata *pst)
 {
@@ -25,31 +26,42 @@ void	sl_main_render(t_game *g, t_imgdata *pst)
 	t_cord	plyr;
 
 	sl_push_bkgrnd_to_frame(&g -> buf, &g -> bgr);
-	sl_coordinate(&floor, 2, g, 0);
-	if (g -> victory == 1)
-	{
-		sl_coordinate(&door, 4, g, 0);
-		sl_push_tile_to_frame(g -> buf.addr, g -> d.addr, door, 'R');
-		sl_push_tile_to_frame(g -> buf.addr, g -> gr.addr, floor, 'R');
-		if (g -> plyr.x == g -> exit_x && g -> plyr.y == g -> exit_y)
-			sl_win(g);
-	}
-	else
+	sl_get_render_coords(g, &floor, &plyr, &door);
+	if (sl_check_for_winner(g, &door, &floor))
 		sl_render_coins(g, &g -> ci, g -> ci.crnt_frm);
-	
-	g->plyr.render_x += (((g->plyr.x * TSZ) - 40) - g->plyr.render_x) * 0.6;
-	g->plyr.render_y += ((g->plyr.y * TSZ) - g->plyr.render_y) * 0.6;
-
-	sl_coordinate(&plyr, 3, g, 0);
 	sl_push_tile_to_frame(g -> buf.addr, pst -> frad[pst -> crnt_frm], plyr, g->plyr.facing);
 	sl_render_enmy(g, g -> enmy);
 	sl_push_tile_to_frame(g -> buf.addr, g -> gr.addr, floor, 'R');
 	sl_apply_camera_lens(g);
+	sl_apply_hud(g);
 	mlx_put_image_to_window(g -> mlx, g -> win, g -> cam.pov, 0, 0);
 	if (g->enmy)
 		sl_is_player_dead(g, g -> enmy, g -> plyr.render_y, g -> plyr.render_x);
-	sl_render_moves(g, "Moves: ", g -> moves);
 	mlx_do_sync(g -> mlx);
+	return ;
+}
+
+static int	sl_check_for_winner(t_game *g, t_cord *door, t_cord *floor)
+{
+	if (g -> victory == 1)
+	{
+		sl_push_tile_to_frame(g -> buf.addr, g -> d.addr, *door, 'R');
+		sl_push_tile_to_frame(g -> buf.addr, g -> gr.addr, *floor, 'R');
+		if ((int)(g->plyr.render_x + 60) < (g->exit_x * TSZ) + (DSZ - 15)
+			&& (g->exit_x * TSZ) + 15 < (int)(g->plyr.render_x + (PSZ - 60))
+			&& (int)(g->plyr.render_y + 15) < (g->exit_y * TSZ) + (DSZ - 15)
+			&& (g->exit_y * TSZ) + 15 < (int)(g->plyr.render_y + (TSZ - 15)))
+			sl_win(g);
+	}
+	return (1);
+}
+
+static void	sl_get_render_coords(t_game *g, t_cord *floor, t_cord *plyr, t_cord *door)
+{
+	if (g -> victory == 1)
+		sl_coordinate(door, 4, g, 0);
+	sl_coordinate(floor, 2, g, 0);
+	sl_coordinate(plyr, 3, g, 0);
 	return ;
 }
 
@@ -124,26 +136,6 @@ void	sl_push_tile_to_frame(char *dst, char *src, t_cord c, char facing)
 		}
 		y++;
 	}
-	return ;
-}
-
-static void	sl_render_moves(t_game *g, char *prefix, int moves)
-{
-	char	*num_char;
-	char	*f_mssg;
-
-	num_char = ft_itoa(moves);
-	if (!num_char)
-		return ;
-	f_mssg = ft_strjoin(prefix, num_char);
-	if (!f_mssg)
-	{
-		free(num_char);
-		return ;
-	}
-	mlx_string_put(g -> mlx, g -> win, 10, 25, 0x37FA85, f_mssg);
-	free(num_char);
-	free(f_mssg);
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/21 20:58:45 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/08 00:38:47 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/10 01:51:59 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,10 @@ void	sl_is_player_dead(t_game *g, t_emy **en, double py, double px)
 	{
 		ex = en[guide]->render_x;
 		ey = en[guide]->render_y;
-		if ((px + tol) < (ex + (TSZ - tol)) && (ex + tol) < (px + (PSZ - tol))
+		if ((px + tol + 20) < (ex + (TSZ - tol)) 
+			&& (ex + tol) < (px + (PSZ - (tol + 20)))
 			&& (py + (tol - 15)) < (ey + (TSZ - (tol - 15)))
-				&& (ey + (tol - 15)) < (py + (TSZ - (tol - 15))))
+			&& (ey + (tol - 15)) < (py + (TSZ - (tol - 15))))
 		{
 			usleep(150000);
 			sl_kill_the_game(g, 1, 69, 0);

@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 09:25:23 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/07 13:39:57 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/10 01:33:14 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ static void	sl_find_player_start(char **map, t_game *game)
 			{
 				game -> plyr.y = y;
 				game -> plyr.x = x;
-				game -> plyr.render_y = y * TSZ;
-				game -> plyr.render_x = x * TSZ;
+				game -> plyr.render_y = (y * TSZ) - TSZ;
+				game -> plyr.render_x = (x * TSZ) - TSZ;
 				return ;
 			}
 			x++;

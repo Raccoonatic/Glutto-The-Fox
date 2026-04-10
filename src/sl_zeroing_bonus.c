@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:21:05 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/08 01:04:50 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/09 21:25:06 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	sl_zeroing(t_game *game)
 	game -> moves = 0;
 	game -> plyr.grounded = 0;
 	game -> plyr.on_e = 0;
-	game -> plyr.state = IDLE;
+	game -> plyr.state = FLY;
 	game -> plyr.facing = 'R';
 	game -> time_stamp = sl_now();
 	game -> ene_mv = sl_now();
@@ -54,6 +54,8 @@ static void	sl_zero_img(t_game *game)
 	sl_null_ptrs(&game -> d);
 	sl_null_ptrs(&game -> gr);
 	sl_null_ptrs(&game -> thnks);
+	sl_null_ptrs(&game -> hud);
+	sl_null_ptrs(&game -> font);
 	sl_zero_ints(&game -> buf, 0);
 	sl_zero_ints(&game -> bgr, 0);
 	sl_zero_ints(&game -> pi, 0);
@@ -62,6 +64,8 @@ static void	sl_zero_img(t_game *game)
 	sl_zero_ints(&game -> d, 0);
 	sl_zero_ints(&game -> gr, 0);
 	sl_zero_ints(&game -> thnks, 0);
+	sl_zero_ints(&game -> hud, 0);
+	sl_zero_ints(&game -> font, 0);
 	return ;
 }
 
