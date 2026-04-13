@@ -6,7 +6,7 @@
 #    By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 15:46:25 by lde-san-          #+#    #+#              #
-#    Updated: 2026/04/10 02:47:03 by lde-san-         ###   ########.fr        #
+#    Updated: 2026/04/13 17:18:03 by lde-san-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -1967,7 +1967,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@chmod +x src/version_maker.sh
 	@printf "\033[0m\n"
 
-path_of_gluttony:
+path_of_gluttony: $(NAME)
 	@printf "🦝 \001\033[3m\033[38;2;255;153;51m\002Building path_of_gluttony.sh... 🦝\\n"
 	@> path_of_gluttony.sh
 	@printf "%s\n" '#!/bin/bash' >> path_of_gluttony.sh
@@ -2014,20 +2014,20 @@ path_of_gluttony:
 	@printf "%s\n" '    exit 1' >> path_of_gluttony.sh
 	@printf "%s\n" 'fi' >> path_of_gluttony.sh
 	@printf "%s\n" '' >> path_of_gluttony.sh
-	@printf "%s\n" 'export GLUTTORES=$$(xrandr | awk '\''/\*/ {print $$1}'\'')' >> path_of_gluttony.sh
+	@printf "%s\n" 'GLUTTORES=$$(xrandr | awk '\''/\*/ {print $$1}'\'')' >> path_of_gluttony.sh
 	@printf "%s\n" '' >> path_of_gluttony.sh
 	@printf "%s\n" 'MAP_SIZES=(' >> path_of_gluttony.sh
-	@printf "%s\n" '	"$$GLUTTORES"' >> path_of_gluttony.sh
-	@printf "%s\n" '	"$$GLUTTORES"' >> path_of_gluttony.sh
-	@printf "%s\n" '	"$$GLUTTORES"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"$${GLUTTORES}"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"$${GLUTTORES}"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"$${GLUTTORES}"' >> path_of_gluttony.sh
 	@printf "%s\n" '	"480x480"' >> path_of_gluttony.sh
-	@printf "%s\n" '	"$$GLUTTORES"' >> path_of_gluttony.sh
-	@printf "%s\n" '	"$$GLUTTORES"' >> path_of_gluttony.sh
-	@printf "%s\n" '	"$$GLUTTORES"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"$${GLUTTORES}"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"$${GLUTTORES}"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"$${GLUTTORES}"' >> path_of_gluttony.sh
 	@printf "%s\n" '	"600x600"' >> path_of_gluttony.sh
 	@printf "%s\n" '	"2000x800"' >> path_of_gluttony.sh
-	@printf "%s\n" '	"1500x1500"' >> path_of_gluttony.sh
-	@printf "%s\n" '	"$$GLUTTORES"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"1500x1000"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"$${GLUTTORES}"' >> path_of_gluttony.sh
 	@printf "%s\n" ')' >> path_of_gluttony.sh
 	@printf "%s\n" '' >> path_of_gluttony.sh
 	@printf "%s\n" 'echo -e "\n\t\t🦊 $${LIME}Starting the $${NEOR}Path of Gluttony $${LIME}Gauntlet... $${RSET}🦝\n"' >> path_of_gluttony.sh
