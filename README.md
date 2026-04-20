@@ -40,7 +40,7 @@ Will you help him confront his guilt?..
 
 ## ⚙️ Instructions
 
-There are 2 elements to this project that you can run with the provided makefile:
+There are 3 elements to this project that you can create with the provided makefile:
 
 ### 🛠️ Compilation
 
@@ -61,6 +61,14 @@ make BKGRND=./textures/background_image.xpm
 make evolution
 ```
 
+- **make path_of_gluttony** : Will create an extra file for added flavor. 
+> The *path_of_gluttony.sh* executable, is a shell script I created to make the project feel more like a game. 🎮️
+
+```bash
+make path_of_gluttony
+
+```
+
 ### 🛠️ Running the Game
 
 Running **make** will leave you with a **so_long** executable, that you can run passing the path to a map as a parameter.
@@ -76,6 +84,17 @@ Running **make** will leave you with a **so_long** executable, that you can run 
 > - **[C]**	Collectible (Arepa 🫓)
 > - **[E]**	Exit 🚪
 > - **[X]**	Enemy 👻🟧
+
+Running **make path_of_gluttony** will leave you with a **so_long** executable and the *path_of_gluttony.sh* shell script. Running the script will take you through 10 levels I've designed to explore and play around with the capabilities of the project.
+```bash
+./path_of_gluttony.sh
+
+```
+> Much like a game, you'll be taken through different "worlds". If you complete it, the next one will be opened automatically. If you lose, or quit the executable will finish with the game. If at some point you want to try a level in particular, (or skip until the one you lost in 😉️) you may do so by calling the script along with the level's number.
+```bash
+./path_of_gluttony.sh 3
+
+```
 
 ### 🎮 Controls
 - **WASD / Arrow Keys**	→ Move Glutto
