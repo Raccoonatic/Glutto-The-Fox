@@ -6,7 +6,7 @@
 #    By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/30 15:46:25 by lde-san-          #+#    #+#              #
-#    Updated: 2026/04/13 17:18:03 by lde-san-         ###   ########.fr        #
+#    Updated: 2026/04/20 16:09:55 by lde-san-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -588,7 +588,9 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@printf "%s\n" '/* ************************************************************************** */' >> src/version_maker.sh
 	@printf "%s\n" '' >> src/version_maker.sh
 	@printf "%s\n" '#include "../../inc/solong.h"' >> src/version_maker.sh
-	@printf "%s\n" '' >> src/version_maker.sh
+	@printf "%s\n" 'int g_camw = 480;' >> src/version_maker.sh
+	@printf "%s\n" 'int g_camh = 480;' >> src/version_maker.sh
+	@printf "%s\n" 'int g_camw = 480;' >> src/version_maker.sh	
 	@printf "%s\n" '/*Experimented with keycodes and events to create movement on the square. It can' >> src/version_maker.sh
 	@printf "%s\n" 'now move freely in and out the window with WASD and the arrow keys. If the mouse' >> src/version_maker.sh
 	@printf "%s\n" 'is on the screen it will follow it, and the ESC key can be used to close the ' >> src/version_maker.sh

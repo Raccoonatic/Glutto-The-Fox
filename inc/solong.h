@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   solong_bonus.h                                     :+:      :+:    :+:   */
+/*   solong.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:21:23 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/03/20 19:23:40 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/20 16:12:25 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@
 # define COIN	"./textures/coin.xpm"
 # define DOOR	"./textures/door.xpm"
 # define ENMY	"./textures/enemy_fly.xpm"
+
+extern int  g_camw;
+extern int  g_camh;
 
 // Data type definitions
 typedef enum e_keys
@@ -212,5 +215,7 @@ t_emy		**sl_get_enemys(t_game *g, char **m);
 void		sl_render_enmy(t_game *g, t_emy **e);
 // -- -- #  sl_win_bonus.c				# -- -- //
 void		sl_win(t_game *g);
+void        sl_apply_hud(t_game *game);
+void        sl_apply_camera_lens(t_game *g);
 
 #endif
