@@ -113,6 +113,13 @@ fclean: clean
 
 re: fclean all
 
+re_path: clean
+	@rm -rf $(OBJ_DIR)
+	@rm -f $(NAME)
+	@rm -rf ./src/test_versions
+	@rm -rf ./src/version_maker.sh
+	make BKGRND=$(BKGRND)
+	
 ./inc/mlx_linux/libmlx.a:
 	@make -C ./inc/mlx_linux
 ./inc/mlx_linux/libmlx_Linux.a:
@@ -256,7 +263,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	./$(NAME)
 	@make fclean
 
-.PHONY: all clean fclean re open mlx_dependencies evolution ./src/version_maker.sh
+.PHONY: all clean fclean re open mlx_dependencies evolution ./src/version_maker.sh re_path
 
 ./src/version_maker.sh:
 	@printf "🦝 \001\033[3m\033[38;2;255;153;51m\002Building src/version_maker.sh... 🦝\\n"
@@ -2025,9 +2032,23 @@ path_of_gluttony: $(NAME)
 	@printf "%s\n" '	"$${GLUTTORES}"' >> path_of_gluttony.sh
 	@printf "%s\n" '	"$${GLUTTORES}"' >> path_of_gluttony.sh
 	@printf "%s\n" '	"600x600"' >> path_of_gluttony.sh
-	@printf "%s\n" '	"2000x800"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"1900x800"' >> path_of_gluttony.sh
 	@printf "%s\n" '	"1500x1000"' >> path_of_gluttony.sh
 	@printf "%s\n" '	"$${GLUTTORES}"' >> path_of_gluttony.sh
+	@printf "%s\n" ')' >> path_of_gluttony.sh
+	@printf "%s\n" '' >> path_of_gluttony.sh
+	@printf "%s\n" 'BACKGROUNDS=(' >> path_of_gluttony.sh
+	@printf "%s\n" '	"./textures/sunsety.xpm"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"./textures/Herculy.xpm"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"./textures/bluey.xpm"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"./textures/nighty.xpm"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"./textures/Herculy.xpm"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"./textures/Seventy.xpm"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"./textures/sunsety.xpm"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"./textures/Tranquill.xpm"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"./textures/Woody.xpm"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"./textures/nighty.xpm"' >> path_of_gluttony.sh
+	@printf "%s\n" '	"./textures/Tranquill.xpm"' >> path_of_gluttony.sh
 	@printf "%s\n" ')' >> path_of_gluttony.sh
 	@printf "%s\n" '' >> path_of_gluttony.sh
 	@printf "%s\n" 'echo -e "\n\t\t🦊 $${LIME}Starting the $${NEOR}Path of Gluttony $${LIME}Gauntlet... $${RSET}🦝\n"' >> path_of_gluttony.sh
@@ -2041,13 +2062,13 @@ path_of_gluttony: $(NAME)
 	@printf "%s\n" '    fi' >> path_of_gluttony.sh
 	@printf "%s\n" '' >> path_of_gluttony.sh
 	@printf "%s\n" '        echo -e "\t              $${PURP}..*$${LIME}#$${PINK}>$${BABY}--$${LIME}>$${BABY}>$${MINT}===========$${BABY}<$${LIME}<$${BABY}--$${PINK}<$${LIME}#$${PURP}*..$${RSET}"' >> path_of_gluttony.sh
-	@printf "%s\n" '		echo -e "\n\t\t     🦝🗺️     $${BABY}LOADING LEVEL$${MINT} $$i    🗺️ 🦝\n"' >> path_of_gluttony.sh
+	@printf "%s\n" '	echo -e "\n\t\t     🦝🗺️     $${BABY}LOADING LEVEL$${MINT} $$i    🗺️ 🦝\n"' >> path_of_gluttony.sh
 	@printf "%s\n" '        echo -e "\t              $${PURP}..*$${LIME}#$${PINK}>$${BABY}--$${LIME}>$${BABY}>$${MINT}===========$${BABY}<$${LIME}<$${BABY}--$${PINK}<$${LIME}#$${PURP}*..$${RSET}\n"' >> path_of_gluttony.sh
-	@printf "%s\n" '		sleep 1' >> path_of_gluttony.sh
+	@printf "%s\n" '	make re_path BKGRND=$${BACKGROUNDS[$$i]} &> /dev/null' >> path_of_gluttony.sh
 	@printf "%s\n" '#################################### Calling the map over here boy!' >> path_of_gluttony.sh
 	@printf "%s\n" '	CURRENT_SIZE="$${MAP_SIZES[$$i]}"' >> path_of_gluttony.sh
 	@printf "%s\n" '	$$EXEC "$$MAP_FILE" $$CURRENT_SIZE' >> path_of_gluttony.sh
-	@printf "%s\n" '    EXIT_CODE=$$?' >> path_of_gluttony.sh
+	@printf "%s\n" '	EXIT_CODE=$$?' >> path_of_gluttony.sh
 	@printf "%s\n" '####################################    ' >> path_of_gluttony.sh
 	@printf "%s\n" '	if [ $$EXIT_CODE -eq 42 ]; then' >> path_of_gluttony.sh
 	@printf "%s\n" '        echo -e "\t $${PURP}..*$${LIME}#$${PINK}>$${BABY}--$${LIME}>$${BABY}>✅ $${MINT}SUCCESS! $${LIME}Moving to the next level... $${RSET}🦝$${BABY}<$${LIME}<$${BABY}--$${PINK}<$${LIME}#$${PURP}*..$${RSET}\n"' >> path_of_gluttony.sh

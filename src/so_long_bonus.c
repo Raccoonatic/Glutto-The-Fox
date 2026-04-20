@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 17:52:48 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/08 01:18:48 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/20 14:35:42 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static void	sl_cam_size(t_game *g, char *size)
 			g_camh = height;
 			g_camw = width;
 			if (g_camh == 1080 || g_camh == 2160)
-				g_camh -= 150;
+				g_camh -= 70;
 		}
 	}
 	if (!size || g->h < 480 || g->h < height)

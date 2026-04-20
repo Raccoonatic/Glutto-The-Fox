@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:21:23 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/09 21:24:41 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/20 14:08:17 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,6 +200,7 @@ void		sl_kill_the_game(t_game *game, int good, int err_cd, int exit_cd);
 char		**sl_check_map(char **map_file, t_game *game);
 // -- -- #	sl_render_bonus.c				# -- -- //
 void		sl_clear_buffer(t_imgdata *img, int h);
+void		sl_apply_camera_lens(t_game *g);
 void		sl_main_render(t_game *game, t_imgdata *pst);
 void		sl_push_bkgrnd_to_frame(t_imgdata *d, t_imgdata *s);
 void		sl_push_tile_to_frame(char *dst, char *src, t_cord c, char facing);

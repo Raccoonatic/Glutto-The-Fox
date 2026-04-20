@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 19:30:27 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/07 23:25:31 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/20 14:05:43 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,10 @@ static void	sl_win_loop(t_game *g, t_imgdata *img, int x)
 
 	middle_top = (g_camh / 2) - (img -> h / 2);
 	y = g -> h + 1;
+	sl_apply_camera_lens(g);
 	while (y > middle_top)
 	{
-		mlx_put_image_to_window(g -> mlx, g -> win, g -> buf.main, 0, 0);
+		mlx_put_image_to_window(g -> mlx, g -> win, g -> cam.pov, 0, 0);
 		mlx_put_image_to_window(g -> mlx, g -> win, img -> main, x, (int)y);
 		mlx_do_sync(g -> mlx);
 		y -= 1.2;

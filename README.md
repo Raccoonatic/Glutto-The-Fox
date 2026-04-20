@@ -85,7 +85,7 @@ Running **make** will leave you with a **so_long** executable, that you can run 
 > - **[E]**	Exit 🚪
 > - **[X]**	Enemy 👻🟧
 
-Running **make path_of_gluttony** will leave you with a **so_long** executable and the *path_of_gluttony.sh* shell script. Running the script will take you through 10 levels I've designed to explore and play around with the capabilities of the project.
+Running **make path_of_gluttony** will leave you with a **so_long** executable and the *path_of_gluttony.sh* shell script. Running the script will take you through 11 levels I've designed to explore and play around with the capabilities of the project.
 ```bash
 ./path_of_gluttony.sh
 

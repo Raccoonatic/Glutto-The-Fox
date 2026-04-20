@@ -6,7 +6,7 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 17:29:23 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/09 21:00:18 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/20 14:06:41 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void		sl_clear_buffer(t_imgdata *img, int h);
 void		sl_push_bkgrnd_to_frame(t_imgdata *d, t_imgdata *s);
 void		sl_push_tile_to_frame(char *dst, char *src, t_cord c, char facing);
-static void	sl_apply_camera_lens(t_game *g);
+void		sl_apply_camera_lens(t_game *g);
 static int	sl_check_for_winner(t_game *g, t_cord *door, t_cord *floor);
 static void	sl_get_render_coords(t_game *g, t_cord *floor, t_cord *plyr, t_cord *door);
 
@@ -65,7 +65,7 @@ static void	sl_get_render_coords(t_game *g, t_cord *floor, t_cord *plyr, t_cord 
 	return ;
 }
 
-static void	sl_apply_camera_lens(t_game *g)
+void	sl_apply_camera_lens(t_game *g)
 {
     char *src;
     char *dst;
