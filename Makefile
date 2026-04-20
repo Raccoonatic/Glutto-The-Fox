@@ -588,9 +588,7 @@ evolution: ./inc/mlx_linux/libmlx_Linux.a ./src/version_maker.sh
 	@printf "%s\n" '/* ************************************************************************** */' >> src/version_maker.sh
 	@printf "%s\n" '' >> src/version_maker.sh
 	@printf "%s\n" '#include "../../inc/solong.h"' >> src/version_maker.sh
-	@printf "%s\n" 'int g_camw = 480;' >> src/version_maker.sh
-	@printf "%s\n" 'int g_camh = 480;' >> src/version_maker.sh
-	@printf "%s\n" 'int g_camw = 480;' >> src/version_maker.sh	
+	@printf "%s\n" '' >> src/version_maker.sh
 	@printf "%s\n" '/*Experimented with keycodes and events to create movement on the square. It can' >> src/version_maker.sh
 	@printf "%s\n" 'now move freely in and out the window with WASD and the arrow keys. If the mouse' >> src/version_maker.sh
 	@printf "%s\n" 'is on the screen it will follow it, and the ESC key can be used to close the ' >> src/version_maker.sh

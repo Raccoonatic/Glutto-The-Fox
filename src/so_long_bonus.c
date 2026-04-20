@@ -6,14 +6,11 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 17:52:48 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/20 14:35:42 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/20 20:55:14 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/solong_bonus.h"
-
-int	g_camw = 480;
-int g_camh = 480;
 
 static int	handle_keypress(int keycode, t_game *data);
 static int	handle_close(t_game *data);

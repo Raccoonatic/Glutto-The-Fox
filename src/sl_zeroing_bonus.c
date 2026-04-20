@@ -6,11 +6,14 @@
 /*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:21:05 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/09 21:25:06 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/04/20 20:55:01 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/solong_bonus.h"
+
+int g_camw = 480;
+int g_camh = 480;
 
 static void	sl_zero_img(t_game *game);
 void		sl_null_ptrs(t_imgdata *i);
