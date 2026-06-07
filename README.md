@@ -1,6 +1,6 @@
 <p align="center"><i>This project has been created as part of the 42 curriculum by lde-san-.</i></p>
 
-<h1 align="center">🦝🕹️ So Long — Glutto the Fox 🕹️🦊</h1>
+<h1 align="center">🦝🕹️ So Long - Glutto the Fox 🕹️🦊</h1>
 <p align="center"><b><em>We all have our demons, not all fights have a clear evil and good side.</em></b></p>
 
 ---
@@ -13,7 +13,7 @@
 
 ---
 
-## 🦊 Glutto the Fox — The Lore
+## 🦊 Glutto the Fox - The Lore
 
 Glutto is a fox with a *mad case of the blues*...  
 As he dreams, his guilt makes him a prisoner of his gluttony. Once he gets the hunger, is almost as if he can't see an exit until he has eaten everything in the room.
