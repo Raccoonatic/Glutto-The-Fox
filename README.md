@@ -1,4 +1,4 @@
-<p align="center"><i>This project has been created as part of the 42 curriculum by lde-san-.</i></p>
+<p align="center"><i>This project has been created as part of the 42 curriculum by lde-san-</i></p>
 
 <h1 align="center">🦝🕹️ So Long - Glutto the Fox 🕹️🦊</h1>
 <p align="center"><b><em>We all have our demons, not all fights have a clear evil and good side.</em></b></p>
