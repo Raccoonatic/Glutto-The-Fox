@@ -207,4 +207,6 @@ Don’t let Glutto eat them all.
 
 💥🧡✨
 
-![Gameplay](./textures/Thanks.png)
+<p align="center">
+ <img src="./textures/Thanks.png" alt="Raccoon Eating Arepa" width="600">
+</p>
