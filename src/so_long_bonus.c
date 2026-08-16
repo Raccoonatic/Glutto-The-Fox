@@ -1,15 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   so_long_bonus.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/13 17:52:48 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/20 20:55:14 by lde-san-         ###   ########.fr       */
+/*                                                   ▒▓              ▓▒       */
+/*   so_long_bonus.c                                ▒▒ ▓▓▓        ▓▓▓ ▒▒      */
+/*                                                  ▒▒▒░░▒▒░▓░░▓░▒▒░░▒▒▒      */
+/*   By: lde-san- <lde-san-@student.42porto.com>     █░  ░░░ ░░ ░░░  ░█       */
+/*                                                   ███████░░░░███████       */
+/*   Created: 2025/11/13 17:52:48 by lde-san-       ░▒▒██ ▓  ██  ▓ ██▒▒░      */
+/*   Updated: 2026/08/16 00:56:31 by lde-san-           ▒ ░██  ██░ ▒          */
+/*                                                         ██████             */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "../inc/solong_bonus.h"
 
 static int	handle_keypress(int keycode, t_game *data);
@@ -31,9 +31,9 @@ int	main(int arc, char *wordy[])
 	else
 		sl_cam_size(&game, NULL);
 	sl_game_init(&game);
-	mlx_hook(game.win, 17, 1L << 0, handle_close, &game);
-	mlx_hook(game.win, 2, 1L << 0, handle_keypress, &game);
-	mlx_loop_hook(game.mlx, sl_animate, &game);
+	mlx_hook(game.win, 17, 1L << 0, (int (*)(void))(void (*)(void))handle_close, &game);
+	mlx_hook(game.win, 2, 1L << 0, (int (*)(void))(void (*)(void))handle_keypress, &game);
+	mlx_loop_hook(game.mlx, (int (*)(void))(void (*)(void))sl_animate, &game);
 	mlx_loop(game.mlx);
 	return (0);
 }
