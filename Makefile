@@ -1,15 +1,15 @@
 # **************************************************************************** #
 #                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/10/30 15:46:25 by lde-san-          #+#    #+#              #
-#    Updated: 2026/04/20 16:09:55 by lde-san-         ###   ########.fr        #
+#                                                    ▒▓              ▓▒        #
+#    Makefile                                       ▒▒ ▓▓▓        ▓▓▓ ▒▒       #
+#                                                   ▒▒▒░░▒▒░▓░░▓░▒▒░░▒▒▒       #
+#    By: lde-san- <lde-san-@student.42porto.com>     █░  ░░░ ░░ ░░░  ░█        #
+#                                                    ███████░░░░███████        #
+#    Created: 2025/10/30 15:46:25 by lde-san-       ░▒▒██ ▓  ██  ▓ ██▒▒░       #
+#    Updated: 2026/08/15 16:53:21 by lde-san-           ▒ ░██  ██░ ▒           #
+#                                                          ██████              #
 #                                                                              #
 # **************************************************************************** #
-
 NAME = so_long
 LIBFT = ./inc/libft/libft.a
 
@@ -55,8 +55,8 @@ OBJ_BONUS = $(SRC_BONUS:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
 
 .PRECIOUS: $(SRC_BONUS)
 
-WERROR ?= -Werror 
-COMPILE = cc -g -O0 -D BKND=\"$(BKGRND)\" -Wall $(WERROR)-Wextra -I./inc -I./inc/mlx_linux
+WERROR ?= -Werror
+COMPILE = cc -g -O0 -D BKND=\"$(BKGRND)\" -Wall $(WERROR) -Wextra -I./inc -I./inc/mlx_linux
 
 all: $(NAME)
 
@@ -119,7 +119,7 @@ re_path: clean
 	@rm -rf ./src/test_versions
 	@rm -rf ./src/version_maker.sh
 	make BKGRND=$(BKGRND)
-	
+
 ./inc/mlx_linux/libmlx.a:
 	@make -C ./inc/mlx_linux
 ./inc/mlx_linux/libmlx_Linux.a:
@@ -2088,4 +2088,3 @@ path_of_gluttony: $(NAME)
 	@printf "%s\n" 'echo -e "\t              $${PURP}..*$${LIME}#$${PINK}>$${BABY}--$${LIME}>$${BABY}>$${BABY}Glutto $${LIME}now lives free of guilt! $${RSET}$${BABY}<$${LIME}<$${BABY}--$${PINK}<$${LIME}#$${PURP}*..$${RSET}"' >> path_of_gluttony.sh
 	@chmod +x path_of_gluttony.sh
 	@printf "\033[0m\t🦝\n"
-
