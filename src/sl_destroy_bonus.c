@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sl_destroy_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
+/*   By: lde-san- <lde-san-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 20:51:10 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/09 10:25:30 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/09/01 16:39:58 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	sl_frink(t_game *g)
 	if (g -> hud.main || g -> hud.frm || g -> hud.frad)
 		sl_imgdata_wipe(g, &g -> hud);
 	if (g -> font.main || g -> font.frm || g -> font.frad)
-		sl_imgdata_wipe(g, &g -> font); 
+		sl_imgdata_wipe(g, &g -> font);
 	sl_freecam(g, &g -> cam);
 	return ;
 }

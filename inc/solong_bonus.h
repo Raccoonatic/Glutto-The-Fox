@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   solong_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lde-san- <lde-san-@student.42porto.co      +#+  +:+       +#+        */
+/*   By: lde-san- <lde-san-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:21:23 by lde-san-          #+#    #+#             */
-/*   Updated: 2026/04/20 14:08:17 by lde-san-         ###   ########.fr       */
+/*   Updated: 2026/09/01 16:39:46 by lde-san-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include <math.h>
 
 // Text Color:
-# define RSET	"\033[0m" 
+# define RSET	"\033[0m"
 # define B_WI	"\033[1;37m"
 # define LIME	"\033[38;2;0;255;0m"
 # define BABY	"\033[1;38;2;0;255;247m"
