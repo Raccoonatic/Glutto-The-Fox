@@ -2057,7 +2057,7 @@ path_of_gluttony: $(NAME)
 	@printf "%s\n" 'for (( i=$$START_LEVEL; i<=10; i++ )); do' >> path_of_gluttony.sh
 	@printf "%s\n" '    MAP_FILE="$${MAP_DIR}/lvl_$${i}.ber"' >> path_of_gluttony.sh
 	@printf "%s\n" '    if [ ! -f "$$MAP_FILE" ]; then' >> path_of_gluttony.sh
-	@printf "%s\n" '        echo -e "❌ $${BLOD}Error: $${ORNG}Could not find $${MINT}$$MAP_FILE$${ORNG}! Did you delete the by any chance?$${RSET}\n"' >> path_of_gluttony.sh
+	@printf "%s\n" '        echo -e "❌ $${BLOD}Error: $${ORNG}Could not find $${MINT}$$MAP_FILE$${ORNG}! Did you delete it by any chance?$${RSET}\n"' >> path_of_gluttony.sh
 	@printf "%s\n" '        exit 1' >> path_of_gluttony.sh
 	@printf "%s\n" '    fi' >> path_of_gluttony.sh
 	@printf "%s\n" '' >> path_of_gluttony.sh
